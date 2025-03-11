@@ -6,25 +6,26 @@ export const menuSchema = defineType({
   type: "document",
   fields: [
     defineField({
-      name: "tagline",
-      title: "Tagline",
-      type: "string",
-    }),
-    defineField({
       name: "sectiontitle",
       title: "Section Title",
       type: "string",
     }),
+    defineField({
+      name: "sectiontagline",
+      title: "Section Tagline",
+      type: "string",
+    }),
+    
     defineField({
       name: "sectiontext",
       title: "Section text",
       type: "string",
     }),
     defineField({
-        name:'foodsectionIcons',
-        title:'Food Section Icons',
+        name:'menusection',
+        title:'Menu Section',
         type:'array',
-        of:[{type:'foodLabel'}]
+        of:[{type:'menuItems'}]
     })
   ],
 });
