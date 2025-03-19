@@ -6,15 +6,16 @@ export const aboutSchema = defineType({
   type: "document",
   fields: [
     defineField({
-        name: "sectiontitle",
-        title: "Section Title",
-        type: "string",
-      }),
-    defineField({
     name: "sectiontagline",
     title: "Section Tagline",
     type: "string",
   }),
+    defineField({
+        name: "sectiontitle",
+        title: "Section Title",
+        type: "string",
+      }),
+    
     defineField({
         name:'backroundImg',
         title:'Background Image',
@@ -23,7 +24,13 @@ export const aboutSchema = defineType({
     defineField({
         name:'bodyText',
         title:'Body Text',
-        type:'string'
+        type: 'array',
+        of: [{type: 'block'}]
+    }),
+    defineField({
+      name:'sideImage',
+      title:'sideImage',
+      type:"image"
     })
   ],
 });

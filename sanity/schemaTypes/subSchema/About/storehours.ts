@@ -11,24 +11,15 @@ export const storeHours = defineType({
       type:'string'
     },
     {
-      name:'openHour',
-      title:"openHour",
-      type:'datetime'
+      name:'openHours',
+      title:"Open Hours",
+      type:'number',
+      description:"Format HHMM"
     },
     {
-        name:'closeHour',
-        title:"closeHour",
-        type:'datetime',
-        options: {
-            timeFormat: 'HH:mm',
-    
-          }
+        name:'closeHours',
+        title:"Close Hours",
+        type:'number',
       },
-    // defineField({
-    //         name:'plate',
-    //         title:'Plate',
-    //         type:'array',
-    //         of:[{type:'plateItems'}]
-    //     })
   ],
 });

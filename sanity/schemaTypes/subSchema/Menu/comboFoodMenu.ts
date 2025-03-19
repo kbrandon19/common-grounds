@@ -5,6 +5,10 @@ export const comboFoodMenu = defineType({
   title:'plate Items',
   type: "object",
   fields: [
+    {name:'dishPhoto',
+      title:'Dish Photo',
+      type:'image'
+    },
     {
       name: "dishName",
       title:'Dish Name',

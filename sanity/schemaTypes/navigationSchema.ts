@@ -6,31 +6,35 @@ export const navigationSchema = defineType({
   type: "document",
   fields: [
     defineField({
+      name: "title",
+      title: "Name of the document",
+      type: "string",
+      
+      
+    }),
+    defineField({
       name: "logo",
       title: "Logo",
       type: "image",
       description: "optional",
     }),
     defineField({
-        name:'navigationlinks',
-        title:'Navigation Links',
-        type:'array',
-        of:[{type:'link'}]
-      }),
+      name: "navigationlinks",
+      title: "Navigation Links",
+      type: "array",
+      of: [{ type: "link" }],
+    }),
   ],
   preview: {
     select: {
-      title: "title", // Custom title field
-      media:"logo"
-      
+      title: "title", // Now this field actually exists
+      media: "logo",
     },
     prepare({ title, media }) {
       return {
-        title: title || "Untitled Document", // Displays the document's title
+        title: title || "No Title", // Fallback text
         media,
       };
-   
     },
   },
-  
 });
