@@ -1,8 +1,8 @@
 import { defineType, defineField } from "sanity";
 
 export const menuSchema = defineType({
-  name: "foodmenu",
-  title: "Food Menu",
+  name: "menu",
+  title: "Menu",
   type: "document",
   fields: [
     defineField({

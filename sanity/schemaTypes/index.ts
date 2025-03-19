@@ -1,5 +1,9 @@
 import { type SchemaTypeDefinition } from 'sanity'
 
+
+//Hero
+import {heroSchema} from './heroSchema'
+
 //Navigation
 import { navigationSchema } from"./navigationSchema"
 import {navigationLinks} from "./subSchema/Navigation/navigationLinks"
@@ -18,7 +22,7 @@ import { storeHours } from './subSchema/About/storehours'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
-    navigationSchema,navigationLinks,
+    heroSchema,navigationSchema,navigationLinks,
     menuSchema,foodMenu, comboFoodMenu,
     aboutSchema,
     contactSchema,storeHours,

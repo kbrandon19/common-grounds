@@ -18,4 +18,19 @@ export const navigationSchema = defineType({
         of:[{type:'link'}]
       }),
   ],
+  preview: {
+    select: {
+      title: "title", // Custom title field
+      media:"logo"
+      
+    },
+    prepare({ title, media }) {
+      return {
+        title: title || "Untitled Document", // Displays the document's title
+        media,
+      };
+   
+    },
+  },
+  
 });
