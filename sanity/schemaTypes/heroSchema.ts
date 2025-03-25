@@ -15,12 +15,6 @@ export const heroSchema = defineType({
         title: "Section text",
         type: "string",
       }),
-      defineField({
-        name:'hours',
-        title:'hours',
-        type:'array',
-        of:[{type:'storeHours'}]
-      })
 
   ],
 });
