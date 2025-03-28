@@ -7,22 +7,27 @@ export const comboFoodMenu = defineType({
   fields: [
     {name:'dishPhoto',
       title:'Dish Photo',
-      type:'image'
+      type:'image',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "dishName",
       title:'Dish Name',
-      type:'string'
+      type:'string',
+      validation: (Rule) => Rule.required(),
+      
     },
     {
       name:'dishDescription',
       title:"Dish Description",
-      type:'string'
+      type:'string',
+      validation: (Rule) => Rule.required(),
     },
     {
         name:'price',
         title:"Price",
-        type:'string'
+        type:'string',
+        validation: (Rule) => Rule.required(),
       },
   ],
 });

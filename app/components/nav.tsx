@@ -24,11 +24,11 @@ async function Nav() {
   const data: Navigation = await getData();
 
   return (
-    <div className="text-black font-bold w-full h-auto px-10 py-4 border-2">
-      <div className="w-auto h-auto border-2 border-blue-200 px-4 flex flex-row justify-between items-center">
+    <div className="text-black font-bold w-full h-auto px-10 py-4 ">
+      <div className="w-auto h-auto  px-4 flex flex-row justify-between items-center">
         
         {/* Logo */}
-        <div className="border-2 border-amber-300 flex items-center">
+        <div className="flex items-center">
           <Link href="/">
             <Image
               height={55}
