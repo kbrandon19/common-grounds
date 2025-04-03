@@ -17,8 +17,8 @@ export const aboutSchema = defineType({
       }),
     
     defineField({
-        name:'backroundImg',
-        title:'Background Image',
+        name:'sectionImage',
+        title:'Section Image',
         type:'image',
     }),
     defineField({

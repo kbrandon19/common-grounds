@@ -47,7 +47,7 @@ export interface plateItemsArr{
 export interface AboutSection{
     sectiontagline:string;
     sectiontitle:string;
-    backgroundImg:Image;
+    sectionImage:Image;
     bodyText:Block[];
     sideImage:Image;
 }

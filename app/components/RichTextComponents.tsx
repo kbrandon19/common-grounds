@@ -16,6 +16,6 @@ import { PortableTextReactComponents } from "@portabletext/react";
 
 export const RichTextComponents: Partial<PortableTextReactComponents> = {
   block: {
-    normal: ({ children }) => <p className="text-base xl:text-lg">{children}</p>,
+    normal: ({ children }) => <p className="text-base xl:text-4xl font-medium text-slate-200 leading-15">{children}</p>,
   },
 };
