@@ -46,14 +46,33 @@ export default function MenuPage() {
 
   return (
     <div className="h-full w-full">
-      {/* Section Title */}
+   <div>
+      {/* background pattern */}
+     <div className="absolute -z-2 w-full h-64">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#9C002B" fillOpacity="1" d="M0,96L120,133.3C240,171,480,245,720,250.7C960,256,1200,192,1320,160L1440,128L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
+     
+      </div>
+
+      {/* New section title */}
+      <div className=" w-full text-center text-black lg:text-white lg:py-20 2xl:py-44 h-auto xl:mb-16 2xl:mb-20 ">
+             
+          <h3 className="text-xs uppercase pb-4">
+            - {menuData.sectiontagline} -
+          </h3>
+          <h2 className="text-5xl font-bold ">{menuData.sectiontitle}</h2>
+        </div>
+   </div>
+
+
+      {/* Old Section Title */}
       <div className="text-center py-8">
-        <div className="mb-10">
+        {/* <div className=" w-full h-auto mb-20">
+             
           <h3 className="text-sm text-gray-500 uppercase">
             - {menuData.sectiontagline} -
           </h3>
           <h2 className="text-3xl font-bold">{menuData.sectiontitle}</h2>
-        </div>
+        </div> */}
         <div className="w-lg text-2xl mx-auto">
           <p className="text-gray-700">{menuData.sectiontext}</p>
         </div>

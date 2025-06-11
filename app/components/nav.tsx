@@ -24,17 +24,17 @@ async function Nav() {
   const data: Navigation = await getData();
 
   return (
-    <div className="text-black font-bold w-full h-auto px-10 py-4 ">
+    <div className="text-black  w-full h-auto px-10 py-4 absolute z-10">
       <div className="w-auto h-auto  px-4 flex flex-row justify-between items-center">
         
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
             <Image
-              height={55}
-              width={55}
+              height={75}
+              width={75}
               src={urlForImage(data.logo)}
-              alt="Florece Logo"
+              alt="Common Grounds Logo"
             />
           </Link>
         </div>
@@ -44,7 +44,7 @@ async function Nav() {
           <ul className="flex space-x-4">
             {data.navigationlinks.map((link, idx) => (
               <li key={idx}>
-                <Link href={`${link.linkname}`} className="uppercase tracking-wide transition-colors">
+                <Link href={`${link.linkname}`} className="text-sm uppercase tracking-wide transition-colors">
                   {link.linkname}
                 </Link>
               </li>

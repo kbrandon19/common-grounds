@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
+
 @plugin "tailwindcss-animate";
+
+::-webkit-scrollbar {
+    display: none;
+}
 
 @custom-variant dark (&:is(.dark *));
 

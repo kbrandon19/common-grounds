@@ -1,4 +1,5 @@
 // import Image from "next/image";
+import Hero from './components/hero'
 import Nav from './components/nav'
 import Menu from './components/menu'
 import About from './components/about'
@@ -6,7 +7,8 @@ import About from './components/about'
 export default function Home() {
   return (
     <>
-  <Nav/>
+    <Nav/>
+    <Hero/>
   <Menu/>
   <About/>
 
