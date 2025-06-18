@@ -51,7 +51,7 @@ export default function MenuPage() {
    {/* <div className="flex items-center justify-center">
       background pattern 
      <div className="absolute -z-2 w-full h-64">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,160L120,181.3C240,203,480,245,720,245.3C960,245,1200,203,1320,181.3L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#9C002B" fill-opacity="1" d="M0,160L120,181.3C240,203,480,245,720,245.3C960,245,1200,203,1320,181.3L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
      
       </div>
 
@@ -64,7 +64,7 @@ export default function MenuPage() {
           <h2 className="text-5xl font-bold ">{menuData.sectiontitle}</h2>
         </div>
    </div> */}
-   <div className="relative w-full h-64 flex items-center justify-center overflow-hidden">
+   <div className="relative w-full h-60 flex items-start justify-center overflow-hidden">
   {/* SVG background pattern */}
   <div className="absolute inset-0 -z-10">
     <svg
@@ -82,24 +82,18 @@ export default function MenuPage() {
   </div>
 
   {/* Centered section text */}
-  <div className="text-center text-white px-4">
+  <div className="text-center text-white px-4 pt-10 ">
     <h3 className="text-xs uppercase pb-2">- {menuData.sectiontagline} -</h3>
-    <h2 className="text-4xl md:text-5xl font-bold">{menuData.sectiontitle}</h2>
+    <h2 className="text-5xl font-bold">{menuData.sectiontitle}</h2>
   </div>
 </div>
 
 
 
       {/* Old Section Title */}
-      <div className="text-center py-8">
-        {/* <div className=" w-full h-auto mb-20">
-             
-          <h3 className="text-sm text-gray-500 uppercase">
-            - {menuData.sectiontagline} -
-          </h3>
-          <h2 className="text-3xl font-bold">{menuData.sectiontitle}</h2>
-        </div> */}
-        <div className="w-lg text-2xl mx-auto">
+      <div className="text-center  mx-auto h-auto ">
+
+        <div className="max-w-lg px-6 lg:px-0 text-2xl 2xl:text-3xl mx-auto">
           <p className="text-gray-700">{menuData.sectiontext}</p>
         </div>
       </div>
