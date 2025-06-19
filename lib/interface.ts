@@ -21,10 +21,14 @@ export interface Hero{
 
 // Menu
 export interface Menu{
+   
+    menusection:MenuItemsArr[];
+}
+
+export interface MenuPrelude{
     sectiontitle:string;
     sectiontagline:string;
     sectiontext:string;
-    menusection:MenuItemsArr[];
 }
 
 export interface MenuItemsArr{

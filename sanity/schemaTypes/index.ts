@@ -10,6 +10,7 @@ import {navigationLinks} from "./subSchema/Navigation/navigationLinks"
 
 //Menu
 import { menuSchema } from './menuSchema'
+import { menuPreludeSchema } from './menuPreludeSchema'
 import {foodMenu} from './subSchema/Menu/foodMenu'
 import { comboFoodMenu } from './subSchema/Menu/comboFoodMenu'
 
@@ -23,7 +24,7 @@ import { storeHours } from './subSchema/About/storehours'
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     heroSchema,navigationSchema,navigationLinks,
-    menuSchema,foodMenu, comboFoodMenu,
+    menuSchema,menuPreludeSchema,foodMenu, comboFoodMenu,
     aboutSchema,
     contactSchema,storeHours,
     

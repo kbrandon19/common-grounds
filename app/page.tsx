@@ -3,12 +3,14 @@ import Hero from './components/hero'
 import Nav from './components/nav'
 import Menu from './components/menu'
 import About from './components/about'
+import MenuPrelude from './components/menuPrelude'
 
 export default function Home() {
   return (
     <>
     <Nav/>
     <Hero/>
+    <MenuPrelude/>
   <Menu/>
   <About/>
 
