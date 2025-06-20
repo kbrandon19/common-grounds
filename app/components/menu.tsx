@@ -165,10 +165,10 @@ export default function MenuPage() {
             .map((category) => (
               <div
                 key={category.foodCategory}
-                className="grid md:grid-cols-2 gap-2 transition-opacity duration-300"
+                className="grid md:grid-cols-2 gap-2 transition-opacity duration-300 "
               >
                 {category.plate?.map((dish) => (
-                  <div key={dish.dishName} className="flex items-center gap-4 ">
+                  <div key={dish.dishName} className="flex items-center flex-col md:flex-row gap-1 md:gap-0 ">
                     <Image
                       src={urlForImage(dish.dishPhoto)}
                       alt={dish.dishName}
@@ -176,13 +176,13 @@ export default function MenuPage() {
                       height={175}
                       className="rounded-md"
                     />
-                    <div className="max-w-md">
+                    <div className=" p-0 md:p-2 text-left">
                       <h4 className="text-lg font-bold">{dish.dishName}</h4>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-md text-gray-600 max-w-md">
                         {dish.dishDescription}
                       </p>
                       <p className="text-md font-semibold mt-1">
-                        ${dish.price}
+                        {dish.price}
                       </p>
                     </div>
                   </div>
