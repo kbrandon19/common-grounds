@@ -3,6 +3,7 @@ import Hero from './components/hero'
 import LocationPrelude from './components/locationPrelude'
 import Menu from './components/menu'
 import MenuPrelude from './components/menuPrelude'
+import Contact from './components/contact'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
     <MenuPrelude/>
     <Menu/>
     <LocationPrelude/>
+    <Contact/>
 
 
   

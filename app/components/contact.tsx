@@ -2,7 +2,39 @@ import React from 'react'
 
 function contact() {
   return (
-    <div>contact</div>
+    <div className='w-full h-auto relative my-10'>
+      <div className='w-auto md:max-w-1/2 md:mx-auto h-auto flex flex-col md:flex-row gap-2 md:gap-0 justify-between px-10 md:px-0'>
+        <div>
+          <h2 className='text-4xl'>Store Hours</h2>
+          
+          <p>Thursday - Sunday : 08:00 - 14:00</p>
+          <p>Mon - Wed : 08:00 - 13:30</p>
+          </div>
+        <div>
+          <p>WhatsApp 096 421 3147</p>
+          <p>IG commongroundss</p>
+        </div>
+      </div>
+
+      {/* Google Map Location */}
+      <div className='md:px-10 -mb-10'>
+       
+      <div className="w-full md:w-5/6 h-96 mx-auto aspect-[16/9] shadow-lg rounded-lg">
+         <iframe
+      src="https://www.google.com/maps?q=Common+Grounds+Coffee+and+Waffle+House&output=embed"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+      </div>
+ 
+      </div>
+      {/* Red Background Banner */}
+      <div className='absolute -z-1 w-full h-24 bg-[#9C002B]'></div>
+    </div>
   )
 }
 
