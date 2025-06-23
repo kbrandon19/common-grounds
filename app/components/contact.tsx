@@ -7,17 +7,26 @@ function contact() {
         <div>
           <h2 className='text-4xl'>Store Hours</h2>
           
-          <p>Thursday - Sunday : 08:00 - 14:00</p>
-          <p>Mon - Wed : 08:00 - 13:30</p>
+          <div>
+            <div className='flex flex-row gap-2'>
+              <p className="w-40">Jueves - Domingo:</p>
+              <p>08:00 - 14:00</p>
+            </div>
+            <div className='flex flex-row gap-2'>
+              <p className="w-40">Lunes - Meircoles:</p>
+              <p> 08:00 - 13:30</p>
+            </div>
+           
           </div>
-        <div>
+          </div>
+        <div className='flex flex-col gap-2'>
           <p>WhatsApp 096 421 3147</p>
           <p>IG commongroundss</p>
         </div>
       </div>
 
       {/* Google Map Location */}
-      <div className='md:px-10 -mb-10'>
+      <div className='md:px-10 -mb-10 pt-10'>
        
       <div className="w-full md:w-5/6 h-96 mx-auto aspect-[16/9] shadow-lg rounded-lg">
          <iframe
