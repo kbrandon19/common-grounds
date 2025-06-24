@@ -88,7 +88,7 @@ export default function MenuPage() {
           <Carousel className="relative w-full mx-auto">
             <CarouselPrevious className="absolute -left-6 top-1/2 -translate-y-1/2 z-10" />
             <CarouselNext className="absolute -right-6 top-1/2 -translate-y-1/2 z-10" />
-            <CarouselContent className="flex">
+            <CarouselContent className="flex gap-0 p-0">
               {menuData.menusection.map((category) => (
                 <CarouselItem
                   key={category.foodCategory}
@@ -96,7 +96,7 @@ export default function MenuPage() {
                 >
                   <button
                     onClick={() => setActiveCategory(category.foodCategory)}
-                    className={`flex flex-col items-center p-2 w-32 sm:w-40 lg:w-full transition-all cursor-pointer ${
+                    className={`flex flex-col items-center p-2 w-32  lg:w-full transition-all cursor-pointer ${
                       activeCategory === category.foodCategory
                         ? "text-black font-bold"
                         : "text-gray-500"
@@ -126,7 +126,7 @@ export default function MenuPage() {
         </div>
 
         {/* Full-width static layout (Desktop and up) */}
-        <div className="hidden lg:flex justify-center gap-4 flex-wrap w-full max-w-screen-xl mx-auto px-6">
+        <div className="hidden lg:flex justify-center gap-4  w-full max-w-screen-xl mx-auto px-6">
           {menuData.menusection.map((category) => (
             <div key={category.foodCategory} className="w-32 sm:w-40">
               <button
@@ -158,38 +158,39 @@ export default function MenuPage() {
           ))}
         </div>
 
+     
         {/* Food Items */}
-        <div className="w-3/4 mx-auto my-16 min-h-[400px]">
-          {menuData.menusection
-            .filter((category) => category.foodCategory === activeCategory)
-            .map((category) => (
-              <div
-                key={category.foodCategory}
-                className="grid md:grid-cols-2 gap-2 transition-opacity duration-300 "
-              >
-                {category.plate?.map((dish) => (
-                  <div key={dish.dishName} className="flex items-center flex-col md:flex-row gap-1 md:gap-0 ">
-                    <Image
-                      src={urlForImage(dish.dishPhoto)}
-                      alt={dish.dishName}
-                      width={175}
-                      height={175}
-                      className="rounded-md"
-                    />
-                    <div className=" p-0 md:p-2 text-left">
-                      <h4 className="text-lg font-bold">{dish.dishName}</h4>
-                      <p className="text-md text-gray-600 max-w-md">
-                        {dish.dishDescription}
-                      </p>
-                      <p className="text-md font-semibold mt-1">
-                        {dish.price}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ))}
-        </div>
+<div className="w-3/4 mx-auto my-16 h-[500px] overflow-y-scroll space-y-4">
+  {menuData.menusection
+    .filter((category) => category.foodCategory === activeCategory)
+    .map((category) => (
+      <div
+        key={category.foodCategory}
+        className="grid md:grid-cols-2 gap-4"
+      >
+        {category.plate?.map((dish) => (
+          <div
+            key={dish.dishName}
+            className="flex items-center flex-col md:flex-row gap-4"
+          >
+            <Image
+              src={urlForImage(dish.dishPhoto)}
+              alt={dish.dishName}
+              width={175}
+              height={175}
+              className="rounded-md"
+            />
+            <div className="w-96 p-2 text-left">
+              <h4 className="text-lg font-bold">{dish.dishName}</h4>
+              <p className="text-md text-gray-600">{dish.dishDescription}</p>
+              <p className="text-md font-semibold mt-1">{dish.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    ))}
+</div>
+
       </div>
     </div>
   );

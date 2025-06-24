@@ -5,6 +5,7 @@ import Menu from './components/menu'
 import MenuPrelude from './components/menuPrelude'
 import Contact from './components/contact'
 
+
 export default function Home() {
   return (
     <>
@@ -14,7 +15,7 @@ export default function Home() {
     <Menu/>
     <LocationPrelude/>
     <Contact/>
-
+ 
 
   
     </>
