@@ -44,7 +44,7 @@ function useCarousel() {
 
 function Carousel({
   orientation = "horizontal",
-  opts,
+  opts={align: "center",skipSnaps: false,},
   setApi,
   plugins,
   className,

@@ -1,12 +1,14 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+// import Image from "next/image";
+// import Link from "next/link";
 
 function contact() {
   return (
-    <div className="w-full h-auto relative my-10">
-      <div className="w-auto md:max-w-1/2 md:mx-auto h-auto flex flex-col md:flex-row gap-6 md:gap-0 justify-between px-10 md:px-0">
-        <div>
+    <div className="w-full h-auto relative mb-10">
+      
+      {/* <div className="w-full md:max-w-1/2 md:mx-auto h-auto flex flex-col items-center lg:flex-row gap-10 lg:gap-0 md:justify-around"> */}
+        {/* Open Hours */}
+        {/* <div className="text-center">
           <h2 className="text-4xl mb-2">Store Hours</h2>
 
           <div>
@@ -19,8 +21,10 @@ function contact() {
               <p> 08:00 - 13:30</p>
             </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-4 justify-center">
+        </div> */}
+
+        {/* Social Media */}
+        {/* <div className="flex flex-col gap-4 justify-center">
           <div className="flex flex-row items-center gap-2">
             <Image
               src="/images/whatsapp.png"
@@ -40,8 +44,8 @@ function contact() {
             />{" "}
             <Link href="https://www.instagram.com/commongroundss">commongroundss</Link>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       {/* Google Map Location */}
       <div className="md:px-10 -mb-10 pt-10">
@@ -58,7 +62,7 @@ function contact() {
         </div>
       </div>
       {/* Red Background Banner */}
-      <div className="absolute -z-1 w-full h-36 bg-[#9C002B] text-white align-bottom flex items-end text-sm pl-10 pb-4">
+      <div className="absolute -z-1 w-full h-36 bg-[#9C002B] text-white align-bottom flex justify-center items-end text-sm p-10 pb-4">
 
         <p>
           Common Grounds Coffee and Waffle House 2025. All Rights Reserved. Designed by DFCS
