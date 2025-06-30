@@ -6,7 +6,7 @@ function locationPrelude() {
   return (
     <div className='w-auto h-120 my-0 px-4 flex flex-col items-center justify-center bg-[#0f4c4d]'>
         <div className='w-2/3 h-auto  mx-auto text-center text-white'>
-            <h3 className='text-5xl md:text-6xl xl:text-7xl mb-4 bold'>Ven y disfrutar desayuno con nosotros!</h3>
+            <h3 className='text-5xl md:text-6xl xl:text-7xl mb-4 bold --font-playfair-display'>Ven y disfrutar desayuno con nosotros!</h3>
             <p className='text-xl xl:text-2xl '>Conveniently located in the heart of Salinas, Ecuador, we’re here to serve you from early morning to afternoon.</p>
         </div>
               <div className="w-full md:max-w-1/2 md:mx-auto h-auto flex flex-col items-center lg:flex-row gap-10 lg:gap-0 md:justify-around">
