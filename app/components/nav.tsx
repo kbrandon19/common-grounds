@@ -35,7 +35,7 @@ export default function Nav() {
 
   return (
     <div className="text-black w-full h-auto px-6 py-4 absolute z-10">
-      <div className="w-auto h-auto px-2 flex flex-row justify-between items-center">
+      <div className="w-auto h-auto px-4 2xl:px-16 flex flex-row justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
@@ -66,7 +66,7 @@ export default function Nav() {
 
         {/* Mobile Nav Toggle */}
         <div className="md:hidden z-50">
-          <button onClick={() => setIsOpen(!isOpen)} className="p-2">
+          <button onClick={() => setIsOpen(!isOpen)} className="p-2 cursor-pointer">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>

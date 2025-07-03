@@ -15,15 +15,10 @@ const config = {
     colors: {
       
       white: "#FAF9F9",
+      darkGreen: "#0F4C4D",
+      red: "#9C002B",
       black: "#0A0A0A",
-      charcoal: "#353A47",
-      lavender: "#ECDEE8",
-      cambridgeBlue: "#89B0AE",
-      plum: "#E0A1D1", //change to PLUM
-
-      // Form Colors
-      'red-400':'#EF5350',
-      'blue':'rgb(59 130 246)'
+      
 
     },
     container: {

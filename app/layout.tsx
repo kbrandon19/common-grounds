@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import Nav from './components/nav'
+import { Poppins } from "next/font/google";
+
 
 import "./globals.css";
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 
 export const metadata: Metadata = {
@@ -15,7 +22,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" >
-      <body className={`antialiased `}>
+      <body className={poppins.className}>
         
           <Nav />
           {children}

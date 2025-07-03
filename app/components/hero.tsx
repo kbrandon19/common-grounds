@@ -23,8 +23,8 @@ async function hero() {
   const data: Hero = await getData();
   return (
     <div className="w-auto h-screen ">
-      <div className="w-auto h-2/3 px-10 2xl:px-24 flex flex-col justify-center">
-        <h1 className="max-w-5xl text-6xl md:text-7xl lg:text-9xl lg:leading-28 ">
+      <div className="w-auto h-screen px-10 2xl:px-24 flex flex-col justify-center">
+        <h1 className="max-w-5xl text-7xl lg:text-9xl lg:leading-28 ">
           {data.sectiontext}
         </h1>
 
