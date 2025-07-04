@@ -52,7 +52,7 @@ export default function Nav() {
         <div className="hidden md:block">
           <ul className="flex space-x-6">
             {data.navigationlinks.map((link, idx) => (
-              <li key={idx}>
+              <li key={idx} className="text-white">
                 <Link
                   href={`/${link.linkname}`}
                   className="text-sm uppercase tracking-wide hover:text-gray-600 transition-colors"
