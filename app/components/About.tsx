@@ -1,7 +1,7 @@
 import React from "react";
-import { urlForImage } from "../sanity/lib/image";
+import { urlForImage } from "../../sanity/lib/image";
 import { AboutSection } from "@/lib/interface";
-import { client } from "../sanity/lib/client";
+import { client } from "../../sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/app/components/RichTextComponents";
 

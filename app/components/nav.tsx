@@ -54,7 +54,7 @@ export default function Nav() {
             {data.navigationlinks.map((link, idx) => (
               <li key={idx} className="text-white">
                 <Link
-                  href={`/${link.linkname}`}
+                  href={`/#${link.linkname}`}
                   className="text-sm uppercase tracking-wide hover:text-gray-600 transition-colors"
                 >
                   {link.linkname}
@@ -62,6 +62,16 @@ export default function Nav() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Order Button CTA */}
+        <div>
+          <Link
+            href="/#Menu"
+            className="hidden md:inline-block bg-white text-[#9C002B] px-4 py-2 rounded-lg hover:bg-[#7a001f] transition-colors"
+          >
+            Order Now
+          </Link>
         </div>
 
         {/* Mobile Nav Toggle */}
@@ -81,7 +91,7 @@ export default function Nav() {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center"
+            className="fixed inset-0 bg-white z-40 flex flex-col text-center items-center justify-center"
           >
             <motion.ul
               initial="hidden"
@@ -101,7 +111,7 @@ export default function Nav() {
                   },
                 },
               }}
-              className="space-y-8 text-2xl font-semibold"
+              className="space-y-8 text-2xl font-semibold text-[#9C002B] uppercase"
             >
               {data.navigationlinks.map((link, idx) => (
                 <motion.li
@@ -113,7 +123,7 @@ export default function Nav() {
                   transition={{ duration: 0.3 }}
                 >
                   <Link
-                    href={`/${link.linkname}`}
+                    href={`/#${link.linkname}`}
                     onClick={() => setIsOpen(false)}
                     className="uppercase"
                   >

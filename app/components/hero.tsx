@@ -22,7 +22,7 @@ async function getData() {
 async function hero() {
   const data: Hero = await getData();
   return (
-    <div className="w-full h-screen bg-[#9C002B] text-white ">
+    <div className="w-full h-screen bg-[#9C002B] text-white" id="/">
 
       <div className="w-auto h-screen   gap-y-4 flex flex-col md:flex-row justify-center content-center pb-24">
 

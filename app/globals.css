@@ -14,6 +14,12 @@
   --font-playfair: 'Playfair Display', serif;
 } */
 
+html{
+  @apply scroll-smooth;
+  @apply text-base;
+  @apply font-sans;
+  @apply antialiased;
+}
 
 @custom-variant dark (&:is(.dark *));
 
