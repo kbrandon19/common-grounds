@@ -1,8 +1,8 @@
 import { defineType } from "sanity";
 
-export const storeHours = defineType({
-  name: "storeHours",
-  title:'Store Hours',
+export const storeScheduleSchema = defineType({
+  name: "storeSchedule",
+  title:'Store Schedule',
   type: "object",
   fields: [
     {

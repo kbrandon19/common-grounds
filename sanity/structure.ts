@@ -8,7 +8,7 @@ export const structure: StructureResolver = (S) =>
       // Exclude "navigation", "about", and "contact" from the document list
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !["hero","navigation", "about", "contact","menu","menuPrelude"].includes(listItem.getId() ?? "")
+          !["hero","navigation", "about", "contact","menu","menuPrelude","hours"].includes(listItem.getId() ?? "")
       ),
 
       S.divider(),
@@ -32,4 +32,6 @@ export const structure: StructureResolver = (S) =>
         S.listItem()
         .title("Menu Prelude")
         .child(S.editor().schemaType("menuPrelude").documentId("menuPrelude")),
+        S.listItem().title("Hours")
+        .child(S.editor().schemaType("hours").documentId("hours")),
     ]);

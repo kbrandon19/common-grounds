@@ -5,6 +5,14 @@ export const contactSchema = defineType({
   title: "Contact",
   type: "document",
   fields: [
+    defineField({
+          name: "title",
+          title: "Title",
+          type: "string",
+          hidden: true, // hides the title field
+          readOnly: true,
+          initialValue: "Contact",
+        }),
       defineField({
         name: "sectiontitle",
         title: "Section Title",
@@ -19,12 +27,17 @@ export const contactSchema = defineType({
         title: "WhatsApp",
         type: "number",
       }),
-      defineField({
-        name:'hours',
-        title:'Hours',
-        type:'array',
-        of:[{type:'storeHours'}]
-      })
+      
 
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+    prepare(selection) {
+      return {
+        title: selection.title ?? "Contact",
+      };
+    },
+  },
 });

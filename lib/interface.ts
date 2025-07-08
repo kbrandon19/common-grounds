@@ -1,3 +1,4 @@
+
 import {Image} from "sanity";
 
 // Navigation
@@ -45,7 +46,23 @@ export interface plateItemsArr{
 }
 
 //Contact
+export interface Contact{
+    sectiontitle:string;
+    sectiontext:string;
+    whatsappNumber:string;
+    
+}
+//Store Hours
+export interface Hours{
+    storehours:StoreSchedule[];
+}
 
+// Store Schedule
+export interface StoreSchedule {
+    day: string;
+    openHours: number; // Format HHMM
+    closeHours: number; // Format HHMM
+}
 //About
 
 export interface AboutSection{

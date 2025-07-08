@@ -6,6 +6,14 @@ export const aboutSchema = defineType({
   type: "document",
   fields: [
     defineField({
+          name: "title",
+          title: "Title",
+          type: "string",
+          hidden: true, // hides the title field
+          readOnly: true,
+          initialValue: "About",
+        }),
+    defineField({
     name: "sectiontagline",
     title: "Section Tagline",
     type: "string",
@@ -33,4 +41,14 @@ export const aboutSchema = defineType({
       type:"image"
     })
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+    prepare(selection) {
+      return {
+        title: selection.title ?? "About",
+      };
+    },
+  },
 });

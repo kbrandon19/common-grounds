@@ -5,7 +5,14 @@ export const menuSchema = defineType({
   title: "Menu",
   type: "document",
   fields: [
-
+defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      hidden: true, // hides the title field
+      readOnly: true,
+      initialValue: "Food Menu",
+    }),
     defineField({
         name:'menusection',
         title:'Menu Section',
@@ -13,4 +20,14 @@ export const menuSchema = defineType({
         of:[{type:'menuItems'}]
     })
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+    prepare(selection) {
+      return {
+        title: selection.title ?? "Food Menu",
+      };
+    },
+  },
 });

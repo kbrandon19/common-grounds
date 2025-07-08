@@ -6,6 +6,14 @@ export const heroSchema = defineType({
   type: "document",
   fields: [
     defineField({
+          name: "title",
+          title: "Title",
+          type: "string",
+          hidden: true, // hides the title field
+          readOnly: true,
+          initialValue: "Hero",
+        }),
+    defineField({
         name: "backgroundImage",
         title: "Background Image",
         type: "image",
@@ -17,4 +25,14 @@ export const heroSchema = defineType({
       }),
 
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+    prepare(selection) {
+      return {
+        title: selection.title ?? "Hero",
+      };
+    },
+  },
 });

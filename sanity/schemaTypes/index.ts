@@ -19,14 +19,18 @@ import { aboutSchema } from './aboutSchema'
 
 //Contact
 import {contactSchema} from './contactSchema'
-import { storeHours } from './subSchema/About/storehours'
+
+//Hours
+import { hoursSchema } from './hoursSchema'
+import { storeScheduleSchema } from './subSchema/Hours/storeScheduleSchema'
+
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     heroSchema,navigationSchema,navigationLinks,
     menuSchema,menuPreludeSchema,foodMenu, comboFoodMenu,
     aboutSchema,
-    contactSchema,storeHours,
+    contactSchema,hoursSchema,storeScheduleSchema
     
   ],
 }

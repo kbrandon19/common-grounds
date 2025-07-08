@@ -1,8 +1,8 @@
 import { defineType, defineField } from "sanity";
 
-export const navigationSchema = defineType({
-  name: "navigation",
-  title: "Navigation",
+export const hoursSchema = defineType({
+  name: "hours",
+  title: "Hours",
   type: "document",
   fields: [
     defineField({
@@ -11,19 +11,13 @@ export const navigationSchema = defineType({
       type: "string",
       hidden: true, // hides the title field
       readOnly: true,
-      initialValue: "Navigation",
+      initialValue: "Hours",
     }),
     defineField({
-      name: "logo",
-      title: "Logo",
-      type: "image",
-      description: "optional",
-    }),
-    defineField({
-      name: "navigationlinks",
-      title: "Navigation Links",
+      name: "storeHours",
+      title: "Store Hours",
       type: "array",
-      of: [{ type: "link" }],
+      of: [{ type: "storeSchedule" }],
     }),
   ],
   preview: {
@@ -32,9 +26,8 @@ export const navigationSchema = defineType({
     },
     prepare(selection) {
       return {
-        title: selection.title ?? "Navigation",
+        title: selection.title ?? "Hours",
       };
     },
   },
-  
 });
