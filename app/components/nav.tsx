@@ -40,8 +40,8 @@ export default function Nav() {
         <div className="flex items-center">
           <Link href="/">
             <Image
-              height={75}
-              width={75}
+              height={100}
+              width={100}
               src={urlForImage(data.logo)}
               alt="Common Grounds Logo"
             />
@@ -65,13 +65,26 @@ export default function Nav() {
         </div>
 
         {/* Order Button CTA */}
-        <div>
-          <Link
+        <div className=" hidden md:flex flex-row gap-x-4">
+          {/* <Link
             href="/#Menu"
             className="hidden md:inline-block bg-white text-[#9C002B] px-4 py-2 rounded-lg hover:bg-[#7a001f] transition-colors"
           >
             Order Now
-          </Link>
+          </Link> */}
+
+          <div className="w-12 h-12 rounded-full bg-[#7d0022] flex items-center justify-center"> <Image
+                        src="/images/instagram (2).png"
+                        alt="Instagram Icon"
+                        width={24}
+                        height={24}
+                      /></div>
+          <div className="w-12 h-12 rounded-full bg-[#7d0022] flex items-center justify-center"><Image
+                        src="/images/whatsapp (1).png"
+                        alt="Instagram Icon"
+                        width={24}
+                        height={24}
+                      /></div>
         </div>
 
         {/* Mobile Nav Toggle */}
@@ -79,62 +92,91 @@ export default function Nav() {
           <button onClick={() => setIsOpen(!isOpen)} className="p-2 cursor-pointer">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
+          
         </div>
       </div>
 
       {/* Animated Mobile Nav Menu */}
-      <AnimatePresence mode="wait">
-        {isOpen && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ x: '-100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
+     <AnimatePresence mode="wait">
+  {isOpen && (
+    <motion.div
+      key="mobile-menu"
+      initial={{ x: '-100%' }}
+      animate={{ x: 0 }}
+      exit={{ x: '-100%' }}
+      transition={{ duration: 0.3 }}
+      className="fixed inset-0 bg-white z-40 flex flex-col text-center items-center justify-center"
+    >
+      <motion.ul
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.1,
+              delayChildren: 0.1,
+            },
+          },
+          hidden: {
+            transition: {
+              staggerChildren: 0.05,
+              staggerDirection: -1,
+            },
+          },
+        }}
+        className="space-y-8 text-2xl font-semibold text-[#9C002B] uppercase"
+      >
+        {data.navigationlinks.map((link, idx) => (
+          <motion.li
+            key={idx}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-white z-40 flex flex-col text-center items-center justify-center"
           >
-            <motion.ul
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={{
-                visible: {
-                  transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 0.1,
-                  },
-                },
-                hidden: {
-                  transition: {
-                    staggerChildren: 0.05,
-                    staggerDirection: -1,
-                  },
-                },
-              }}
-              className="space-y-8 text-2xl font-semibold text-[#9C002B] uppercase"
+            <Link
+              href={`/#${link.linkname}`}
+              onClick={() => setIsOpen(false)}
+              className="uppercase"
             >
-              {data.navigationlinks.map((link, idx) => (
-                <motion.li
-                  key={idx}
-                  variants={{
-                    hidden: { opacity: 0, x: -50 },
-                    visible: { opacity: 1, x: 0 },
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Link
-                    href={`/#${link.linkname}`}
-                    onClick={() => setIsOpen(false)}
-                    className="uppercase"
-                  >
-                    {link.linkname}
-                  </Link>
-                </motion.li>
-              ))}
-            </motion.ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              {link.linkname}
+            </Link>
+          </motion.li>
+        ))}
+
+        {/* Animated Social Media Icons */}
+        <motion.li
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+          transition={{ duration: 0.3 }}
+          className="w-full h-auto flex flex-col items-center gap-4 justify-center"
+        >
+          <div className="w-12 h-12 rounded-full bg-[#7d0022] flex items-center justify-center">
+            <Image
+              src="/images/instagram (2).png"
+              alt="Instagram Icon"
+              width={24}
+              height={24}
+            />
+          </div>
+          <div className="w-12 h-12 rounded-full bg-[#7d0022] flex items-center justify-center">
+            <Image
+              src="/images/whatsapp (1).png"
+              alt="WhatsApp Icon"
+              width={24}
+              height={24}
+            />
+          </div>
+        </motion.li>
+      </motion.ul>
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </div>
   );
 }

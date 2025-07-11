@@ -1,8 +1,6 @@
 export const revalidate = 0;
 
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { client } from "../../sanity/lib/client";
 import { Hours } from "@/lib/interface";
 
@@ -39,44 +37,19 @@ async function locationPrelude() {
       </div>
 
       {/* Store Hours + Social Media */}
-      <div className="w-full md:max-w-1/2 md:mx-auto h-auto flex flex-col items-center lg:flex-row gap-10 lg:gap-0 md:justify-around my-10">
+      <div className="w-full sm:w-1/2  mx-auto h-auto flex flex-col items-center gap-10 lg:gap-0  my-10">
         {/* Store Hours */}
-        <div className="text-center">
+        <div className="text-center w-3/4">
           <h2 className="text-4xl mb-2">Store Hours</h2>
           <div>
             {data.storehours.map((hour, idx) => (
-              <div key={idx} className="flex flex-col items-center mb-4">
+              <div key={idx} className="flex flex-row gap-x-4 items-center justify-between flex-wrap">
                 <p className="text-lg font-semibold">{hour.day}</p>
-                <p className="text-sm text-gray-600">
+                <p className="text-md text-gray-600">
                   {hour.openHours} – {hour.closeHours}
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Social Links */}
-        <div className="flex flex-row gap-4 justify-center">
-          <div className="flex flex-row items-center gap-2">
-            <Image
-              src="/images/whatsapp.png"
-              alt="WhatsApp Icon"
-              width={24}
-              height={24}
-            />
-            <Link href="https://wa.me/0964213147">096 421 3147</Link>
-          </div>
-
-          <div className="flex flex-row items-center gap-2">
-            <Image
-              src="/images/instagram.png"
-              alt="Instagram Icon"
-              width={24}
-              height={24}
-            />
-            <Link href="https://www.instagram.com/commongroundss">
-              commongroundss
-            </Link>
           </div>
         </div>
       </div>
