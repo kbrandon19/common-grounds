@@ -24,7 +24,7 @@ async function locationPrelude() {
   const data = await getData();
 
   return (
-    <div className="w-full h-auto">
+    <div className="w-full h-auto" id="Contact">
       {/* Top Banner */}
       <div className="w-auto h-120 my-0 px-4 flex flex-col items-center justify-center bg-[#0f4c4d]">
         <div className="w-2/3 h-auto mx-auto text-center text-white">
@@ -39,13 +39,13 @@ async function locationPrelude() {
       {/* Store Hours + Social Media */}
       <div className="w-full sm:w-1/2  mx-auto h-auto flex flex-col items-center gap-10 lg:gap-0  my-10">
         {/* Store Hours */}
-        <div className="text-center w-3/4">
-          <h2 className="text-4xl mb-2">Store Hours</h2>
+        <div className="text-center w-1/2">
+          {/* <h2 className="text-4xl mb-2">Store Hours</h2> */}
           <div>
             {data.storehours.map((hour, idx) => (
-              <div key={idx} className="flex flex-row gap-x-4 items-center justify-between flex-wrap">
-                <p className="text-lg font-semibold">{hour.day}</p>
-                <p className="text-md text-gray-600">
+              <div key={idx} className="flex flex-row gap-x-4 items-center justify-between">
+                <p className="text-xl font-semibold">{hour.day}</p>
+                <p className="text-lg text-gray-600">
                   {hour.openHours} – {hour.closeHours}
                 </p>
               </div>

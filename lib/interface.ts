@@ -6,10 +6,18 @@ export interface Navigation{
 title:string;
 logo:Image;
 navigationlinks: navLinks[];
+socialMediaLinks: socialMediaLinks[];
 }
 
 export interface navLinks{
 linkname:string;
+}
+
+//Social Media Links
+export interface socialMediaLinks{
+icon:Image;
+socialName:string;
+socialLink:string;
 }
 
 // Hero

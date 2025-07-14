@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Nav from './components/nav'
 import { Poppins } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 
 
 import "./globals.css";
+
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,10 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body className={poppins.className}>
-        
+        <main>
           <Nav />
           {children}
-        
+          <Analytics />
+
+        </main>
       </body>
     </html>
   );

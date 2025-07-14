@@ -23,6 +23,7 @@ import {contactSchema} from './contactSchema'
 //Hours
 import { hoursSchema } from './hoursSchema'
 import { storeScheduleSchema } from './subSchema/Hours/storeScheduleSchema'
+import { socialMediaIcons } from './subSchema/Navigation/socialMediaIcons'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -30,7 +31,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     heroSchema,navigationSchema,navigationLinks,
     menuSchema,menuPreludeSchema,foodMenu, comboFoodMenu,
     aboutSchema,
-    contactSchema,hoursSchema,storeScheduleSchema
+    contactSchema,hoursSchema,storeScheduleSchema,socialMediaIcons
     
   ],
 }

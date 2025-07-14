@@ -25,6 +25,12 @@ export const navigationSchema = defineType({
       type: "array",
       of: [{ type: "link" }],
     }),
+    defineField({
+      name: "socialMediaLinks",
+      title: "Social Media Links",
+      type: "array",
+      of: [{ type: "social" }],
+    }),
   ],
   preview: {
     select: {

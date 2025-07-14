@@ -4,7 +4,7 @@ import React from "react";
 
 function contact() {
   return (
-    <div className="w-full h-auto relative mb-10" id="Contact">
+    <div className="w-full h-auto relative mb-10" >
       
       {/* <div className="w-full md:max-w-1/2 md:mx-auto h-auto flex flex-col items-center lg:flex-row gap-10 lg:gap-0 md:justify-around"> */}
         {/* Open Hours */}

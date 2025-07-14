@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 export const revalidate = 0;
 
@@ -16,7 +16,12 @@ async function getData() {
     *[_type == 'navigation'][0] {
       title,
       logo,
-      navigationlinks[] { linkname }
+      navigationlinks[] { linkname },
+      socialMediaLinks[] {
+        icon,
+        socialName,
+        socialLink
+      }
     }
   `;
   const data: Navigation = await client.fetch(query);
@@ -55,7 +60,7 @@ export default function Nav() {
               <li key={idx} className="text-white">
                 <Link
                   href={`/#${link.linkname}`}
-                  className="text-sm uppercase tracking-wide hover:text-gray-600 transition-colors"
+                  className="text-md uppercase tracking-wide hover:text-[#6d001e] transition-colors"
                 >
                   {link.linkname}
                 </Link>
@@ -64,119 +69,136 @@ export default function Nav() {
           </ul>
         </div>
 
-        {/* Order Button CTA */}
+        {/* Social Media  */}
         <div className=" hidden md:flex flex-row gap-x-4">
-          {/* <Link
-            href="/#Menu"
-            className="hidden md:inline-block bg-white text-[#9C002B] px-4 py-2 rounded-lg hover:bg-[#7a001f] transition-colors"
-          >
-            Order Now
-          </Link> */}
 
-          <div className="w-12 h-12 rounded-full bg-[#7d0022] flex items-center justify-center"> <Image
-                        src="/images/instagram (2).png"
-                        alt="Instagram Icon"
-                        width={24}
-                        height={24}
-                      /></div>
-          <div className="w-12 h-12 rounded-full bg-[#7d0022] flex items-center justify-center"><Image
-                        src="/images/whatsapp (1).png"
-                        alt="Instagram Icon"
-                        width={24}
-                        height={24}
-                      /></div>
+          {data.socialMediaLinks.map((link, idx) => (
+            <div
+              key={idx}
+              className="w-12 h-12  flex items-center justify-center"
+            >
+              <Link
+                href={link.socialLink}
+                target="_blank"
+              >
+                <Image
+                  src={urlForImage(link.icon)}
+                  alt={link.socialName}
+                  width={24}
+                  height={24}
+                  
+                />
+              </Link>
+            </div>
+          ))}
         </div>
 
         {/* Mobile Nav Toggle */}
         <div className="md:hidden z-50">
-          <button onClick={() => setIsOpen(!isOpen)} className="p-2 cursor-pointer">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 cursor-pointer"
+          >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
-          
         </div>
       </div>
 
       {/* Animated Mobile Nav Menu */}
-     <AnimatePresence mode="wait">
-  {isOpen && (
-    <motion.div
-      key="mobile-menu"
-      initial={{ x: '-100%' }}
-      animate={{ x: 0 }}
-      exit={{ x: '-100%' }}
-      transition={{ duration: 0.3 }}
-      className="fixed inset-0 bg-white z-40 flex flex-col text-center items-center justify-center"
-    >
-      <motion.ul
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.1,
-              delayChildren: 0.1,
-            },
-          },
-          hidden: {
-            transition: {
-              staggerChildren: 0.05,
-              staggerDirection: -1,
-            },
-          },
-        }}
-        className="space-y-8 text-2xl font-semibold text-[#9C002B] uppercase"
-      >
-        {data.navigationlinks.map((link, idx) => (
-          <motion.li
-            key={idx}
-            variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { opacity: 1, x: 0 },
-            }}
+      <AnimatePresence mode="wait">
+        {isOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
             transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-white z-40 flex flex-col text-center items-center justify-center"
           >
-            <Link
-              href={`/#${link.linkname}`}
-              onClick={() => setIsOpen(false)}
-              className="uppercase"
+            <motion.ul
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1,
+                    delayChildren: 0.1,
+                  },
+                },
+                hidden: {
+                  transition: {
+                    staggerChildren: 0.05,
+                    staggerDirection: -1,
+                  },
+                },
+              }}
+              className="space-y-8 text-2xl font-semibold text-[#9C002B] uppercase"
             >
-              {link.linkname}
-            </Link>
-          </motion.li>
-        ))}
+              {data.navigationlinks.map((link, idx) => (
+                <motion.li
+                  key={idx}
+                  variants={{
+                    hidden: { opacity: 0, x: -50 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Link
+                    href={`/#${link.linkname}`}
+                    onClick={() => setIsOpen(false)}
+                    className="uppercase"
+                  >
+                    {link.linkname}
+                  </Link>
+                </motion.li>
+              ))}
 
-        {/* Animated Social Media Icons */}
-        <motion.li
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-          transition={{ duration: 0.3 }}
-          className="w-full h-auto flex flex-col items-center gap-4 justify-center"
-        >
-          <div className="w-12 h-12 rounded-full bg-[#7d0022] flex items-center justify-center">
-            <Image
-              src="/images/instagram (2).png"
-              alt="Instagram Icon"
-              width={24}
-              height={24}
-            />
-          </div>
-          <div className="w-12 h-12 rounded-full bg-[#7d0022] flex items-center justify-center">
-            <Image
-              src="/images/whatsapp (1).png"
-              alt="WhatsApp Icon"
-              width={24}
-              height={24}
-            />
-          </div>
-        </motion.li>
-      </motion.ul>
-    </motion.div>
-  )}
-</AnimatePresence>
+              {/* Animated Social Media Icons */}
+              <motion.li
+                variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1,
+                    delayChildren: 0.1,
+                  },
+                },
+                hidden: {
+                  transition: {
+                    staggerChildren: 0.05,
+                    staggerDirection: -1,
+                  },
+                },
+              }}
+                transition={{ duration: 0.3 }}
+                className="w-full h-auto flex flex-col items-center gap-4 justify-center"
+              >
+{data.socialMediaLinks.map((link, idx) => (
+  <motion.div
+    key={idx}
+    variants={{
+      hidden: { opacity: 0, x: -50 },
+      visible: { opacity: 1, x: 0 },
+    }}
+    transition={{ duration: 0.3 }}
+    className="w-12 h-12 flex items-center justify-center"
+  >
+    <Link href={link.socialLink}>
+      <Image
+        src={urlForImage(link.icon)}
+        alt={link.socialName}
+        width={24}
+        height={24}
+      />
+    </Link>
+  </motion.div>
+))}
 
+              </motion.li>
+            </motion.ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
