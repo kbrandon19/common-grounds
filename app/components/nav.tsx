@@ -115,6 +115,8 @@ export default function Nav() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 bg-white z-40 flex flex-col text-center items-center justify-center"
           >
+            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-[length:1000px_auto] bg-left-top opacity-50" />
+
             <motion.ul
               initial="hidden"
               animate="visible"
@@ -133,7 +135,7 @@ export default function Nav() {
                   },
                 },
               }}
-              className="space-y-8 text-2xl font-semibold text-[#9C002B] uppercase"
+              className="space-y-8 text-3xl font-semibold text-[#9C002B] uppercase"
             >
               {data.navigationlinks.map((link, idx) => (
                 <motion.li

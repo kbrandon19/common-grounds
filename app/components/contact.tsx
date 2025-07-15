@@ -63,6 +63,8 @@ function contact() {
       </div>
       {/* Red Background Banner */}
       <div className="absolute -z-1 w-full h-36 bg-[#9C002B] text-white align-bottom flex justify-center items-end text-sm p-10 pb-4">
+        <div className="w-full h-36 absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-[length:1000px_auto] bg-center-top" />
+
 
         <p>
           Common Grounds Coffee and Waffle House 2025. All Rights Reserved. Designed by DFCS

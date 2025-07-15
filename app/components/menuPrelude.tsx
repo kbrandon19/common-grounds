@@ -21,8 +21,10 @@ async function menuPrelude() {
   const data: MenuPrelude = await getData();
   return (
     <div className="h-auto w-auto mb-16" id="Menu">
+      
       {/* Background section */}
       <div className="relative w-full h-60 flex items-start justify-center overflow-hidden">
+        
         <div className="absolute inset-0 -z-10">
           <svg
             className="w-full h-full"

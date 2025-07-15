@@ -18,11 +18,14 @@ async function getData() {
   const data: Hero = await client.fetch(query);
   return data;
 }
+// 
 
 async function hero() {
   const data: Hero = await getData();
   return (
-    <div className="w-full h-screen bg-[#9C002B] text-white" id="/">
+   <div className="w-full h-screen bg-[#9C002B] text-white " id="/">
+
+<div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-[length:1000px_auto] bg-center-top" />
 
       <div className="w-auto h-screen   gap-y-4 flex flex-col md:flex-row justify-center content-center pb-24">
 
