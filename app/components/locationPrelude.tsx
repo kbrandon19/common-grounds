@@ -24,10 +24,11 @@ async function locationPrelude() {
   const data = await getData();
 
   return (
-    <div className="w-full h-auto" id="Contact">
+    <div className="w-full h-auto relative" id="Contact">   <div className="w-full h-120 absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground-Green.png')] bg-repeat bg-[length:1000px_auto] bg-left-top opacity-25" />
       {/* Top Banner */}
-      <div className="w-auto h-120 my-0 px-4 flex flex-col items-center justify-center bg-[#0f4c4d] bg-[url('/images/CGBackground-Green.png')] bg-repeat bg-[length:1000px_auto] bg-center-top">
-        {/* <div className="w-full h-screen absolute inset-x-0 top-0 z-1 bg-[url('/images/CGBackground-Green.png')] bg-repeat bg-[length:1000px_auto] bg-left-top" /> */}
+      <div className="w-full h-120 px-4 flex flex-col items-center justify-center bg-[#0f4c4d] ">
+
+     
 
         <div className="w-2/3 h-auto mx-auto text-center text-white">
           <h3 className="text-xs uppercase pb-2 mb-4">- Ven a visitarnos -</h3>
