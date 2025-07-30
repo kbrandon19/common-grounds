@@ -48,7 +48,7 @@ function contact() {
       {/* </div> */}
 
       {/* Google Map Location */}
-      <div className="md:px-10 -mb-10 pt-10">
+      {/* <div className="md:px-10 -mb-10 pt-10">
         <div className="w-full md:w-5/6 h-96 mx-auto aspect-[16/9] shadow-lg rounded-lg">
           <iframe
             src="https://www.google.com/maps?q=Common+Grounds+Coffee+and+Waffle+House&output=embed"
@@ -60,7 +60,7 @@ function contact() {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-      </div>
+      </div> */}
       {/* Red Background Banner */}
       <div className="absolute -z-1 w-full h-36 bg-[#9C002B] text-white align-bottom flex justify-center items-end text-sm p-10 pb-4">
         <div className="w-full h-36 absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-[length:1000px_auto] bg-center-top" />

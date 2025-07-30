@@ -40,22 +40,41 @@ async function locationPrelude() {
       </div>
 
       {/* Store Hours + Social Media */}
-      <div className="w-full sm:w-1/2  mx-auto h-auto flex flex-col items-center gap-10 lg:gap-0  my-10">
-        {/* Store Hours */}
-        <div className="text-center w-1/2">
-          {/* <h2 className="text-4xl mb-2">Store Hours</h2> */}
-          <div>
-            {data.storehours.map((hour, idx) => (
-              <div key={idx} className="flex flex-row gap-x-4 items-center justify-between">
-                <p className="text-xl font-semibold">{hour.day}</p>
-                <p className="text-lg text-gray-600">
-                  {hour.openHours} – {hour.closeHours}
-                </p>
-              </div>
-            ))}
-          </div>
+      <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto -mt-12 mb-12">
+  {/* Google Map Section */}
+  <div className="w-full md:w-3/4 h-96 md:h-auto aspect-[16/9] md:aspect-auto">
+    <iframe
+      src="https://www.google.com/maps?q=Common+Grounds+Coffee+and+Waffle+House&output=embed"
+      width="100%"
+      height="100%"
+      className="w-full h-full"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+  {/* Store Hours Section */}
+  <div className="w-full md:w-1/4 p-8 flex flex-col justify-center bg-red-200">
+    <h2 className="text-3xl font-bold text-gray-800 mb-1">Common Grounds</h2>
+    <p className="text-orange-600 font-medium mb-6">Ubicado en Salinas</p>
+
+    <div className="space-y-3">
+      {data.storehours.map((hour, idx) => (
+        <div key={idx} className="flex justify-between text-gray-700 text-base">
+          <span className="uppercase font-medium">{hour.day}</span>
+          <span>{hour.openHours} – {hour.closeHours}</span>
         </div>
-      </div>
+      ))}
+    </div>
+
+    <button className="mt-6 w-fit px-4 py-2 border border-orange-600 text-orange-600 hover:bg-orange-50 rounded transition">
+      Ver ubicación
+    </button>
+  </div>
+</div>
+
     </div>
   );
 }
