@@ -24,7 +24,10 @@ async function locationPrelude() {
   const data = await getData();
 
   return (
-    <div className="w-full h-auto relative" id="Contact">   <div className="w-full h-120 absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground-Green.png')] bg-repeat bg-[length:1000px_auto] bg-left-top opacity-25" />
+    <div className="w-full h-auto relative bg-blue-200" id="Contact">   
+    <div className="w-full h-120 absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground-Green.png')] bg-repeat bg-[length:1000px_auto] bg-left-top opacity-25" />
+    
+
       {/* Top Banner */}
       <div className="w-full h-120 px-4 flex flex-col items-center justify-center bg-[#0f4c4d] ">
 
@@ -38,9 +41,10 @@ async function locationPrelude() {
           </h2>
         </div>
       </div>
-
+    yes
       {/* Store Hours + Social Media */}
       <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto -mt-12 mb-12">
+        
   {/* Google Map Section */}
   <div className="w-full md:w-3/4 h-96 md:h-auto aspect-[16/9] md:aspect-auto">
     <iframe
@@ -56,7 +60,7 @@ async function locationPrelude() {
   </div>
 
   {/* Store Hours Section */}
-  <div className="w-full md:w-1/4 p-8 flex flex-col justify-center bg-red-200">
+  <div className="w-full md:w-1/4 p-8 flex flex-col justify-center ">
     <h2 className="text-3xl font-bold text-gray-800 mb-1">Common Grounds</h2>
     <p className="text-orange-600 font-medium mb-6">Ubicado en Salinas</p>
 
