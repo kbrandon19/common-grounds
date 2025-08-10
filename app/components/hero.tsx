@@ -28,7 +28,7 @@ async function HeroSection() {
       <div className="w-auto h-screen relative z-5 flex flex-col lg:flex-row gap-y-10 justify-end md:justify-around items-center content-center pb-0">
         {/* Hero Text */}
         <div className=" px-24 md:p-0 flex flex-col items-center text-center lg:text-left lg:pl-16  gap-y-2 mt-36 lg:mt-0">
-          <h1 className=" text-5xl md:text-8xl lg:text-8xl xl:text-9xl lg:leading-20 xl:leading-28">
+          <h1 className=" text-6xl md:text-8xl lg:text-8xl xl:text-9xl lg:leading-20 xl:leading-28">
             {data.sectiontext}
           </h1>
 
