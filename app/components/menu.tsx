@@ -64,8 +64,11 @@ export default function MenuPage() {
     fetchMenu();
   }, []);
 
+// Skeleton 
   if (!menuData) {
     return (
+
+      
       <div className="p-10 space-y-10">
         <div className="flex justify-center">
           <div className="flex gap-6">
@@ -92,6 +95,8 @@ export default function MenuPage() {
           </div>
         </div>
       </div>
+
+      
     );
   }
 
@@ -135,8 +140,10 @@ export default function MenuPage() {
                             : "scale-100"
                         }`}
                       />
+                      
                     </div>
                     <h3 className="text-sm text-center mt-2">
+                     
                       {category.foodCategory}
                     </h3>
                   </button>
@@ -158,7 +165,21 @@ export default function MenuPage() {
                     : "text-gray-500"
                 }`}
               >
+                <div className="w-10 h-10 flex justify-center items-center">
+                      <Image
+                        src={urlForImage(category.foodCategoryIcon)}
+                        alt={category.foodCategory}
+                        width={30}
+                        height={30}
+                        className={`transition-transform ${
+                          activeCategory === category.foodCategory
+                            ? "scale-110 shadow-xl"
+                            : "scale-100"
+                        }`}
+                      />
+                    </div>
                 <h3 className="text-sm text-center mt-2">
+                  
                   {category.foodCategory}
                 </h3>
               </button>
