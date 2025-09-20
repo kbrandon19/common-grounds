@@ -24,8 +24,8 @@ async function locationPrelude() {
   const data = await getData();
 
   return (
-    <div className="w-full h-auto relative bg-blue-200" id="Contact">   
-    <div className="w-full h-120 absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground-Green.png')] bg-repeat bg-[length:1000px_auto] bg-left-top opacity-25" />
+    <div className="w-full h-auto relative" id="Contact">   
+    <div className="w-full h-120 absolute inset-x-0 top-0 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground-Green_n7d9mn.png')] bg-repeat bg-[length:1000px_auto] bg-left-top opacity-25" />
     
 
       {/* Top Banner */}
@@ -41,7 +41,6 @@ async function locationPrelude() {
           </h2>
         </div>
       </div>
-    yes
       {/* Store Hours + Social Media */}
       <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto -mt-12 mb-12">
         

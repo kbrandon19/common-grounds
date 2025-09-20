@@ -1,34 +1,17 @@
+// app/menu/MenuClient.tsx
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
-import { client } from "../../sanity/lib/client";
-import { Menu } from "@/lib/interface";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { Skeleton } from "@/components/ui/skeleton";
-import { urlForImage } from "../../sanity/lib/image";
 import useEmblaCarousel from "embla-carousel-react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { urlForImage } from "@/sanity/lib/image";
+import { Menu } from "@/lib/interface";
 
-async function getData() {
-  const query = `
-    *[_type == 'menu'][0] {
-      menusection[]{
-        foodCategory,
-        foodCategoryIcon,
-        plate[]{
-          dishPhoto,
-          dishName,
-          dishDescription,
-          price
-        }
-      }
-    }
-  `;
-  return await client.fetch(query);
-}
-
-export default function MenuPage() {
-  const [menuData, setMenuData] = useState<Menu | null>(null);
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+export default function MenuClient({ initialData }: { initialData: Menu }) {
+  const [activeCategory, setActiveCategory] = useState<string | null>(
+    initialData.menusection[0]?.foodCategory || null
+  );
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
@@ -55,20 +38,8 @@ export default function MenuPage() {
     [emblaApi]
   );
 
-  useEffect(() => {
-    async function fetchMenu() {
-      const data = await getData();
-      setMenuData(data);
-      setActiveCategory(data.menusection[0]?.foodCategory || null);
-    }
-    fetchMenu();
-  }, []);
-
-// Skeleton 
-  if (!menuData) {
+  if (!initialData) {
     return (
-
-      
       <div className="p-10 space-y-10">
         <div className="flex justify-center">
           <div className="flex gap-6">
@@ -95,24 +66,17 @@ export default function MenuPage() {
           </div>
         </div>
       </div>
-
-      
     );
   }
 
   return (
     <div className="h-full w-full">
-      <div className="w-full h-auto mt-40 ">
+      <div className="w-full h-auto mt-40">
         {/* Mobile Layout */}
         <div className="block lg:hidden relative px-4">
-          {/* Fading gradient overlays */}
-          {/* <div className="pointer-events-none absolute top-0 left-0 h-full w-20 z-10 bg-gradient-to-r from-white to-transparent" />
-          <div className="pointer-events-none absolute top-0 right-0 h-full w-20 z-10 bg-gradient-to-l from-white to-transparent" /> */}
-
-          {/* Embla carousel container */}
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex gap-4 px-2">
-              {menuData.menusection.map((category, index) => (
+              {initialData.menusection.map((category, index) => (
                 <div
                   key={category.foodCategory}
                   className="flex-shrink-0 w-32"
@@ -134,16 +98,15 @@ export default function MenuPage() {
                         alt={category.foodCategory}
                         width={30}
                         height={30}
+                        quality={70}
                         className={`transition-transform ${
                           activeCategory === category.foodCategory
                             ? "scale-110 shadow-xl"
                             : "scale-100"
                         }`}
                       />
-                      
                     </div>
                     <h3 className="text-sm text-center mt-2">
-                     
                       {category.foodCategory}
                     </h3>
                   </button>
@@ -155,7 +118,7 @@ export default function MenuPage() {
 
         {/* Desktop Layout */}
         <div className="hidden lg:flex justify-start gap-4 w-full max-w-screen-xl mx-auto px-6">
-          {menuData.menusection.map((category) => (
+          {initialData.menusection.map((category) => (
             <div key={category.foodCategory} className="w-32 sm:w-40">
               <button
                 onClick={() => setActiveCategory(category.foodCategory)}
@@ -166,20 +129,20 @@ export default function MenuPage() {
                 }`}
               >
                 <div className="w-10 h-10 flex justify-center items-center">
-                      <Image
-                        src={urlForImage(category.foodCategoryIcon)}
-                        alt={category.foodCategory}
-                        width={30}
-                        height={30}
-                        className={`transition-transform ${
-                          activeCategory === category.foodCategory
-                            ? "scale-110 shadow-xl"
-                            : "scale-100"
-                        }`}
-                      />
-                    </div>
+                  <Image
+                    src={urlForImage(category.foodCategoryIcon)}
+                    alt={category.foodCategory}
+                    width={30}
+                    height={30}
+                    quality={70}
+                    className={`transition-transform ${
+                      activeCategory === category.foodCategory
+                        ? "scale-110 shadow-xl"
+                        : "scale-100"
+                    }`}
+                  />
+                </div>
                 <h3 className="text-sm text-center mt-2">
-                  
                   {category.foodCategory}
                 </h3>
               </button>
@@ -188,8 +151,8 @@ export default function MenuPage() {
         </div>
 
         {/* Food Items */}
-        <div className="w-3/4 mx-auto mt-16 h-auto  space-y-4 pb-20">
-          {menuData.menusection
+        <div className="w-3/4 mx-auto mt-16 h-auto space-y-4 pb-20">
+          {initialData.menusection
             .filter((category) => category.foodCategory === activeCategory)
             .map((category) => (
               <div
@@ -201,11 +164,14 @@ export default function MenuPage() {
                     key={dish.dishName}
                     className="flex items-center flex-col md:flex-row gap-y-4"
                   >
-                    <div className="w-full h-36  relative rounded-md overflow-hidden">
+                    <div className="w-full h-36 relative rounded-md overflow-hidden">
                       <Image
                         src={urlForImage(dish.dishPhoto)}
                         alt={dish.dishName}
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        quality={70}
+                        placeholder="empty"
                         className="object-cover md:object-contain"
                       />
                     </div>

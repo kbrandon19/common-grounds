@@ -1,9 +1,9 @@
 // import Image from "next/image";
 import Hero from './components/hero'
 import LocationPrelude from './components/locationPrelude'
-import Menu from './components/menu'
+import Menu from './components/Menu/page'
 import MenuPrelude from './components/menuPrelude'
-import Contact from './components/contact'
+import Footer from './components/footer'
 
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
     <MenuPrelude/>
     <Menu/>
     <LocationPrelude/>
-    <Contact/>
+    <Footer/>
  
 
   
