@@ -8,7 +8,9 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: "Missing query parameter" }, { status: 400 });
   }
 
-  const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+// When ready uncomment the line below
+
+  // const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
   try {
     // Step 1: Find Place ID

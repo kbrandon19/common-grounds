@@ -42,11 +42,11 @@ export default function Nav() {
     <div className="text-black w-full h-auto px-6 py-4 absolute z-10">
       <div className="w-auto h-auto px-4 2xl:px-16 flex flex-row justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flextems-center">
           <Link href="/">
             <Image
-              height={50}
-              width={50}
+              height={75}
+              width={75}
               src={urlForImage(data.logo)}
               alt="Common Grounds Logo"
             />

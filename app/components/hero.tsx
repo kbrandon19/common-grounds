@@ -5,7 +5,7 @@ import Image from "next/image";
 import { client } from "../../sanity/lib/client";
 import { Hero } from "@/lib/interface";
 import { urlForImage } from "../../sanity/lib/image";
-import Rating from './placeRating'
+import Rating from '../GoogleReview/placeRating'
 
 async function getData() {
   const query = `

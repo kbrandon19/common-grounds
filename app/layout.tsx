@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     "pastries",
     "community cafe",
     "coffee shop",
+    "ecuador",
+    "playa","cafe","desayuno"
   ],
   authors: [{ name: "Common Grounds Coffee House" }],
   openGraph: {
@@ -101,7 +103,6 @@ export default function RootLayout({
     servesCuisine: ["Coffee", "Pastries", "Sandwiches"],
     menu: "https://common-grounds.vercel.app/menu",
     sameAs: [
-      "https://www.facebook.com/CommonGroundsCoffeeHouse",
       "https://www.instagram.com/CommonGroundsCoffeeHouse",
     ],
   };

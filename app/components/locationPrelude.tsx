@@ -61,7 +61,7 @@ async function locationPrelude() {
   {/* Store Hours Section */}
   <div className="w-full md:w-1/4 p-8 flex flex-col justify-center ">
     <h2 className="text-3xl font-bold text-gray-800 mb-1">Common Grounds</h2>
-    <p className="text-orange-600 font-medium mb-6">Ubicado en Salinas</p>
+    <p className="text-orange-600 font-medium mb-6">Ubicado en San Lorenzo, Salinas</p>
 
     <div className="space-y-3">
       {data.storehours.map((hour, idx) => (
@@ -72,9 +72,9 @@ async function locationPrelude() {
       ))}
     </div>
 
-    <button className="mt-6 w-fit px-4 py-2 border border-orange-600 text-orange-600 hover:bg-orange-50 rounded transition">
+    {/* <button className="mt-6 w-fit px-4 py-2 border border-orange-600 text-orange-600 hover:bg-orange-50 rounded transition">
       Ver ubicación
-    </button>
+    </button> */}
   </div>
 </div>
 
