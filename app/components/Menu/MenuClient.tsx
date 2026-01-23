@@ -124,8 +124,8 @@ export default function MenuClient({ initialData }: { initialData: Menu }) {
                 onClick={() => setActiveCategory(category.foodCategory)}
                 className={`flex flex-col items-center p-4 w-full transition-all cursor-pointer ${
                   activeCategory === category.foodCategory
-                    ? "text-white font-bold bg-[#9C002B] rounded-md"
-                    : "text-gray-500"
+                    ? "text-white font-bold greyscale-0 bg-[#9C002B] rounded-md"
+                    : "text-gray-500 grayscale"
                 }`}
               >
                 <div className="w-10 h-10 flex justify-center items-center">
