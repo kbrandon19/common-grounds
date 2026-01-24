@@ -33,7 +33,7 @@ async function locationPrelude() {
 
      
 
-        <div className="w-2/3 h-auto mx-auto text-center text-white">
+        <div className="w-full lg:w-2/3 h-auto mx-auto text-center text-white">
           <h3 className="text-xs uppercase pb-2 mb-4">- Ven a visitarnos -</h3>
           <h2 className="text-4xl md:text-5xl font-bold">
             Convenientemente ubicado en el corazón de Salinas. Estamos aquí para

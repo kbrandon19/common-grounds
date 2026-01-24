@@ -14,12 +14,20 @@ export default function PlaceInfo() {
   const [data, setData] = useState<PlaceData | null>(null);
 
   useEffect(() => {
-    async function fetchPlace() {
-      const res = await fetch("/api/getPlace?q=Common Grounds Salinas Ecuador");
-      const json = await res.json();
-      setData(json);
-    }
-    fetchPlace();
+    // Temporarily disabled until API key is set
+    // async function fetchPlace() {
+    //   const res = await fetch("/api/getPlace?q=Common Grounds Salinas Ecuador");
+    //   const json = await res.json();
+    //   setData(json);
+    // }
+    // fetchPlace();
+    // Mock data for now
+    setData({
+      name: "Common Grounds Salinas Ecuador",
+      address: "Sample Address",
+      rating: 4.5,
+      totalReviews: 150
+    });
   }, []);
 
   const rating = data?.rating ?? 0;

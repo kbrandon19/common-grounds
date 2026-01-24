@@ -31,15 +31,49 @@ async function getData() {
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState<Navigation | null>(null);
+  const [navBgColor, setNavBgColor] = useState(false);
 
   useEffect(() => {
     getData().then(setData);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const h1Element = document.querySelector('h1');
+      if (!h1Element) return;
+
+      const h1Rect = h1Element.getBoundingClientRect();
+      const navHeight = 100; // Approximate nav height
+
+      // If h1 top is above or near the nav area, set background color
+      if (h1Rect.top < navHeight) {
+        setNavBgColor(true);
+      } else {
+        setNavBgColor(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   if (!data) return null;
 
   return (
-    <div className="text-black w-full h-auto px-6 py-4 absolute z-10">
+    <div className={`text-black w-full h-auto px-6 py-4 fixed z-10 transition-colors duration-300 ${
+      navBgColor ? 'bg-[#9C002B]' : 'bg-transparent'
+    }`}>
       <div className="w-auto h-auto px-4 2xl:px-16 flex flex-row justify-between items-center">
         {/* Logo */}
         <div className="flextems-center">
@@ -96,8 +130,13 @@ export default function Nav() {
         {/* Mobile Nav Toggle */}
         <div className="md:hidden z-50">
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 cursor-pointer"
+            onClick={() => {
+              console.log('Toggling menu, current isOpen:', isOpen);
+              setIsOpen(!isOpen);
+            }}
+            className={`p-2 cursor-pointer transition-colors ${
+              isOpen ? 'text-black' : (navBgColor ? 'text-white' : 'text-black')
+            }`}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -115,7 +154,7 @@ export default function Nav() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 bg-white z-40 flex flex-col text-center items-center justify-center"
           >
-            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-[length:1000px_auto] bg-left-top opacity-50" />
+            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-left-top opacity-50" />
 
             <motion.ul
               initial="hidden"
@@ -135,7 +174,7 @@ export default function Nav() {
                   },
                 },
               }}
-              className="space-y-8 text-3xl font-semibold text-[#9C002B] uppercase"
+              className="space-y-8 text-3xl font-semibold text-[#9C002B] uppercase relative z-10"
             >
               {data.navigationlinks.map((link, idx) => (
                 <motion.li
@@ -159,43 +198,42 @@ export default function Nav() {
               {/* Animated Social Media Icons */}
               <motion.li
                 variants={{
-                visible: {
-                  transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 0.1,
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.1,
+                      delayChildren: 0.1,
+                    },
                   },
-                },
-                hidden: {
-                  transition: {
-                    staggerChildren: 0.05,
-                    staggerDirection: -1,
+                  hidden: {
+                    transition: {
+                      staggerChildren: 0.05,
+                      staggerDirection: -1,
+                    },
                   },
-                },
-              }}
+                }}
                 transition={{ duration: 0.3 }}
                 className="w-full h-auto flex flex-col items-center gap-4 justify-center"
               >
-{data.socialMediaLinks.map((link, idx) => (
-  <motion.div
-    key={idx}
-    variants={{
-      hidden: { opacity: 0, x: -50 },
-      visible: { opacity: 1, x: 0 },
-    }}
-    transition={{ duration: 0.3 }}
-    className="w-12 h-12 flex items-center justify-center"
-  >
-    <Link href={link.socialLink}>
-      <Image
-        src={urlForImage(link.icon)}
-        alt={link.socialName}
-        width={24}
-        height={24}
-      />
-    </Link>
-  </motion.div>
-))}
-
+                {data.socialMediaLinks.map((link, idx) => (
+                  <motion.div
+                    key={idx}
+                    variants={{
+                      hidden: { opacity: 0, x: -50 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="w-12 h-12 flex items-center justify-center"
+                  >
+                    <Link href={link.socialLink} target="_blank">
+                      <Image
+                        src={urlForImage(link.icon)}
+                        alt={link.socialName}
+                        width={24}
+                        height={24}
+                      />
+                    </Link>
+                  </motion.div>
+                ))}
               </motion.li>
             </motion.ul>
           </motion.div>
