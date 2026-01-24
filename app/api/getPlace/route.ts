@@ -10,7 +10,7 @@ export async function GET(req: Request) {
 
 // When ready uncomment the line below
 
-  // const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+  const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
   try {
     // Step 1: Find Place ID
@@ -39,7 +39,8 @@ export async function GET(req: Request) {
       rating: detailsData.result?.rating,
       totalReviews: detailsData.result?.user_ratings_total,
     });
-  } catch (err) {
+  } catch (error) {
+    console.error(error);
     return NextResponse.json({ error: "Failed to fetch data" }, { status: 500 });
   }
 }
