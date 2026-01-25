@@ -162,9 +162,9 @@ export default function MenuClient({ initialData }: { initialData: Menu }) {
                 {category.plate?.map((dish) => (
                   <div
                     key={dish.dishName}
-                    className="flex items-center flex-col md:flex-row gap-y-4"
+                    className="flex items-center flex-col  md:flex-row gap-y-4"
                   >
-                    <div className="w-full h-36 relative rounded-md overflow-hidden">
+                    <div className="w-full h-52 relative rounded-md overflow-hidden">
                       <Image
                         src={urlForImage(dish.dishPhoto)}
                         alt={dish.dishName}
@@ -172,7 +172,7 @@ export default function MenuClient({ initialData }: { initialData: Menu }) {
                         sizes="(max-width: 768px) 100vw, 50vw"
                         quality={70}
                         placeholder="empty"
-                        className="object-cover md:object-contain"
+                        className="object-cover md:object-cover"
                       />
                     </div>
                     <div className="w-full mx-auto text-left">
