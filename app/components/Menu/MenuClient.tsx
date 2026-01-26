@@ -134,7 +134,6 @@ export default function MenuClient({ initialData }: { initialData: Menu }) {
                     alt={category.foodCategory}
                     width={30}
                     height={30}
-                    quality={70}
                     className={`transition-transform ${
                       activeCategory === category.foodCategory
                         ? "scale-110 shadow-xl"
@@ -170,7 +169,6 @@ export default function MenuClient({ initialData }: { initialData: Menu }) {
                         alt={dish.dishName}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        quality={70}
                         placeholder="empty"
                         className="object-cover md:object-cover"
                       />
