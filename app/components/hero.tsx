@@ -5,7 +5,7 @@ import Image from "next/image";
 import { client } from "../../sanity/lib/client";
 import { Hero } from "@/lib/interface";
 import { urlForImage } from "../../sanity/lib/image";
-import Rating from '../GoogleReview/placeRating'
+import Rating from "../GoogleReview/placeRating";
 
 async function getData() {
   const query = `
@@ -34,12 +34,13 @@ async function HeroSection() {
           </h1>
 
           {/* Google Review */}
-         <Rating/>
+          <Rating />
         </div>
 
         {/* Hero Image */}
         <div className="  w-full h-full relative  lg:mt-24 xl:mt-36">
           <Image
+            priority
             src={urlForImage(data.backgroundImage)}
             alt="Background Image"
             fill

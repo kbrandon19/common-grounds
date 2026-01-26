@@ -161,7 +161,7 @@ export default function MenuClient({ initialData }: { initialData: Menu }) {
                 {category.plate?.map((dish) => (
                   <div
                     key={dish.dishName}
-                    className="flex items-center flex-col  md:flex-row gap-y-4"
+                    className="flex items-center flex-col  md:flex-row gap-4"
                   >
                     <div className="w-full h-52 relative rounded-md overflow-hidden">
                       <Image
