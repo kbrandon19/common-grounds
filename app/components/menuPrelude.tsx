@@ -27,17 +27,18 @@ async function menuPrelude() {
         
         <div className="absolute inset-0 -z-10">
           <svg
-            className="w-full h-full"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-            preserveAspectRatio="none"
-          >
-            <path
-              fill="#9C002B"
-              fillOpacity="1"
-              d="M0,160L120,181.3C240,203,480,245,720,245.3C960,245,1200,203,1320,181.3L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
-            ></path>
-          </svg>
+  className="w-full h-full"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1440 320"
+  preserveAspectRatio="none"
+  style={{ display: 'block' }}  // Add this
+>
+  <path
+    fill="#9C002B"
+    fillOpacity="1"
+    d="M0,160L120,181.3C240,203,480,245,720,245.3C960,245,1200,203,1320,181.3L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
+  ></path>
+</svg>
         </div>
 
         <div className="text-center text-white px-4 pt-10">
@@ -51,7 +52,7 @@ async function menuPrelude() {
       {/* Section body */}
       <div className="text-center mx-auto h-auto">
         <div className="max-w-lg px-6 lg:px-0 text-2xl 2xl:text-3xl mx-auto">
-          <p className="text-gray-700">{data.sectiontext}</p>
+          <p className="text-gray-700 text-2xl">{data.sectiontext}</p>
         </div>
       </div>
     </div>

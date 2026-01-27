@@ -35,7 +35,7 @@ export default function PlaceInfo() {
 
   return (
     <div
-      className={`w-full h-auto flex flex-row md:gap-4 md:flex-row justify-center items-start lg:justify-start px-4 gap-2 transition duration-300 ${
+      className={`mt-4 w-full h-auto flex flex-row md:gap-4 md:flex-row justify-center items-start lg:justify-start px-4 gap-2 transition duration-300 ${
         !data ? "blur-sm opacity-50" : "blur-0 opacity-100"
       }`}
     >

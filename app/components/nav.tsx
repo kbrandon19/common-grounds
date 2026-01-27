@@ -212,7 +212,7 @@ export default function Nav() {
                   },
                 }}
                 transition={{ duration: 0.3 }}
-                className="w-full h-auto flex flex-col items-center gap-4 justify-center"
+                className="w-full h-auto flex flex-row items-center gap-4 justify-center"
               >
                 {data.socialMediaLinks.map((link, idx) => (
                   <motion.div

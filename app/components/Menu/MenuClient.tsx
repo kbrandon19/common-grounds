@@ -8,9 +8,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { urlForImage } from "@/sanity/lib/image";
 import { Menu } from "@/lib/interface";
 
-export default function MenuClient({ initialData }: { initialData: Menu }) {
+export default function MenuClient({ initialData }: { initialData: Menu | null }) {
   const [activeCategory, setActiveCategory] = useState<string | null>(
-    initialData.menusection[0]?.foodCategory || null
+    initialData?.menusection?.[0]?.foodCategory || null
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel({

@@ -3,7 +3,7 @@ import { client } from "@/sanity/lib/client";
 import { Menu } from "@/lib/interface";
 import MenuClient from "./MenuClient";
 
-async function getData(): Promise<Menu> {
+async function getData(): Promise<Menu | null> {
   const query = `
     *[_type == 'menu'][0] {
       menusection[]{
