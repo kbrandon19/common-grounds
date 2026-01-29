@@ -20,6 +20,8 @@ export const storeScheduleSchema = defineType({
         name:'closeHours',
         title:"Close Hours",
         type:'number',
+        description:"Format HHMM"
+
       },
   ],
 });
