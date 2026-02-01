@@ -3,6 +3,7 @@ export const revalidate = 0;
 import React from "react";
 import { client } from "../../sanity/lib/client";
 import { Hours } from "@/lib/interface";
+import Image from "next/image";
 
 // Query from Sanity
 async function getData(): Promise<Hours | null> {
@@ -24,7 +25,7 @@ async function locationPrelude() {
   if (!data || !data.storehours) {
     return (
       <>
-        <div className="w-full h-64 drop-shadow-md relative" >
+        <div className="w-full h-64 drop-shadow-md relative">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 321"
@@ -40,12 +41,15 @@ async function locationPrelude() {
           </svg>
         </div>
 
-        <div className="w-full h-auto relative" >
+        <div className="w-full h-auto relative">
           <div className="w-full h-screen absolute inset-x-0 -top-10 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground-Green_n7d9mn.png')] bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-top-left opacity-25" />
 
           {/* Top Banner */}
-          <div className="w-full h-screen px-4 flex flex-col items-center justify-center bg-[#0f4c4d] "id="Contact">
-            <div className="w-full lg:w-2/3 h-auto mx-auto text-center text-white " >
+          <div
+            className="w-full h-screen px-4 flex flex-col items-center justify-center bg-[#0f4c4d] "
+            id="Contact"
+          >
+            <div className="w-full lg:w-2/3 h-auto mx-auto text-center text-white ">
               <h3 className="text-xs uppercase pb-2 mb-4">
                 - Ven a visitarnos -
               </h3>
@@ -126,16 +130,11 @@ async function locationPrelude() {
       <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto -mt-12 mb-12">
         {/* Google Map Section */}
         <div className="w-full md:w-3/4 h-96 md:h-auto aspect-video md:aspect-auto">
-          <iframe
-            src="https://www.google.com/maps?q=Common+Grounds+Coffee+and+Waffle+House&output=embed"
-            width="100%"
-            height="100%"
+          <Image
+            src={`https://maps.googleapis.com/maps/api/staticmap?center=-2.2052105,-80.9597101&zoom=17&size=600x300&markers=color:red%7C-2.2052105,-80.9597101&key=${process.env.GOOGLE_MAPS_API}`}
+            alt="Common Grounds Coffee and Waffle House location"
             className="w-full h-full"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          />
         </div>
 
         {/* Store Hours Section */}
