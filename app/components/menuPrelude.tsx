@@ -37,6 +37,8 @@ async function menuPrelude() {
               d="M0,160L120,181.3C240,203,480,245,720,245.3C960,245,1200,203,1320,181.3L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
             ></path>
           </svg>
+
+          <div className="w-full h-screen absolute inset-x-0 -top-10 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground_pwxndl.png')] bg-repeat bg-[length:1000px_auto] bg-center-top" />
         </div>
 
         <div className="text-center text-white px-4 pt-10">

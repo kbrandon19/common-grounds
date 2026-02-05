@@ -3,6 +3,8 @@
 import React from "react";
 // import Image from "next/image";
 // import Link from "next/link";
+import { CircleArrowUp } from 'lucide-react';
+
 
 function contact() {
   const scrollToTop = () => {
@@ -17,13 +19,17 @@ function contact() {
           Common Grounds Coffee and Waffle House 2026. All Rights Reserved. Designed & Developed by <a href="dfcreativestudio.com" target="_blank">DFCS</a>
           
         </p>
-        <button
+        <div className="w-full h-full flex justify-end content-center">  
+          <button
           onClick={scrollToTop}
-          className="mt-4 px-4 py-2 bg-[#0f4c4d] text-white rounded hover:bg-[#196360] transition-colors duration-200"
+          className="px-4 py-2 bg-[#0f4c4d] text-white rounded hover:bg-[#196360] transition-colors duration-200 cursor-pointer"
           aria-label="Back to top"
         >
-          Back to Top
+        <CircleArrowUp className="w-4 h-4 mr-2 inline" />
+          TOP
         </button>
+        </div>
+      
       
     </div>
   );
