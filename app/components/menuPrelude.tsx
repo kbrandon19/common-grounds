@@ -21,8 +21,15 @@ async function menuPrelude() {
   return (
     <div className="h-auto w-auto mb-16" id="Menu">
       {/* Background section */}
-      <div className="relative w-full h-60 flex items-start justify-center overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+      <div className="relative w-full h-60 flex items-start justify-center ">
+        
+        <div className="absolute inset-0 -z-10 ">
+          <div className="absolute w-full h-60 -top-5 lg:top-0 left-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1770431822/Common%20Grounds/Background/Frame_3_gnmkbi.png')] bg-repeat-x bg-[length:1000px_auto] bg-center-top" />
+            
+            
+            
+
+            
           
           <svg
             className="w-full h-full"
@@ -38,7 +45,7 @@ async function menuPrelude() {
             ></path>
           </svg>
 
-          <div className="w-full h-screen absolute inset-x-0 -top-10 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground_pwxndl.png')] bg-repeat bg-[length:1000px_auto] bg-center-top" />
+         
         </div>
 
         <div className="text-center text-white px-4 pt-10">

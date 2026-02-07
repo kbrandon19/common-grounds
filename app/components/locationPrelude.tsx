@@ -31,6 +31,8 @@ async function locationPrelude() {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 321"
             className="drop-shadow-lg" // or drop-shadow-xl for even more
+                        preserveAspectRatio="none"
+
             style={{ display: "block" }}
           >
             <path
@@ -38,7 +40,7 @@ async function locationPrelude() {
               fillOpacity="1"
               d="M0,192L120,197.3C240,203,480,213,720,192C960,171,1200,117,1320,90.7L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
             />
-            asdfas
+            
           </svg>
         </div>
 

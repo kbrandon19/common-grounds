@@ -15,7 +15,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
-    dragFree: false,
+    dragFree: true,
     containScroll: "trimSnaps",
   });
 
@@ -74,7 +74,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
       <div className="w-full h-auto mt-40">
         {/* Mobile Layout */}
         <div className="block lg:hidden relative px-4">
-          <div className="overflow-hidden" ref={emblaRef}>
+          <div className="overflow-scroll" ref={emblaRef}>
             <div className="flex gap-4 px-2">
               {initialData.menusection.map((category, index) => (
                 <div
@@ -117,7 +117,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:flex justify-start gap-4 w-full max-w-screen-xl mx-auto px-6">
+        <div className="hidden lg:flex justify-start gap-4 w-full max-w-screen-xl mx-auto px-6 ">
           {initialData.menusection.map((category) => (
             <div key={category.foodCategory} className="w-32 sm:w-40">
               <button
@@ -128,7 +128,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
                     : "text-gray-500 grayscale"
                 }`}
               >
-                <div className="w-10 h-10 flex justify-center items-center">
+                <div className="w-10 h-10 flex justify-center items-center ">
                   <Image
                     src={urlForImage(category.foodCategoryIcon)}
                     alt={category.foodCategory}
