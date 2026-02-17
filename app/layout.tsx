@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
+'use client'
+
 import Nav from "./components/nav";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { usePathname } from "next/navigation";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -10,55 +12,12 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-export const metadata: Metadata = {
-  title: "Common Grounds Coffee House – Coffee, Pastries & Community",
-  description:
-    "Common Grounds Coffee House is your cozy neighborhood spot for ethically sourced coffee, fresh-baked pastries, and a welcoming space to connect.",
-  keywords: [
-    "coffee house",
-    "specialty coffee",
-    "Common Grounds Coffee House",
-    "espresso",
-    "latte",
-    "pastries",
-    "community cafe",
-    "coffee shop",
-    "ecuador",
-    "playa","cafe","desayuno"
-  ],
-  authors: [{ name: "Common Grounds Coffee House" }],
-  openGraph: {
-    type: "website",
-    url: "https://common-grounds.vercel.app",
-    title: "Common Grounds Coffee House – Coffee, Pastries & Community",
-    description:
-      "Enjoy ethically sourced coffee, fresh pastries, and a cozy space to connect at Common Grounds Coffee House.",
-    images: [
-      {
-        url: "https://common-grounds.vercel.app/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Common Grounds Coffee House interior with coffee and pastries",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Common Grounds Coffee House – Coffee, Pastries & Community",
-    description:
-      "Sip, savor, and stay awhile at Common Grounds Coffee House – your local spot for great coffee and warm community.",
-    images: ["https://common-grounds.vercel.app/images/og-image.jpg"],
-  },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-  metadataBase: new URL("https://common-grounds.vercel.app"),
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const pathname = usePathname();
+  const isStudio = pathname?.startsWith('/studio');
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CafeOrCoffeeShop",
@@ -110,6 +69,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Common Grounds Coffee House – Coffee, Pastries & Community</title>
+        <meta name="description" content="Common Grounds Coffee House is your cozy neighborhood spot for ethically sourced coffee, fresh-baked pastries, and a welcoming space to connect." />
+        <meta name="keywords" content="coffee house, specialty coffee, Common Grounds Coffee House, espresso, latte, pastries, community cafe, coffee shop, ecuador, playa, cafe, desayuno" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://common-grounds.vercel.app" />
+        <meta property="og:title" content="Common Grounds Coffee House – Coffee, Pastries & Community" />
+        <meta property="og:description" content="Enjoy ethically sourced coffee, fresh pastries, and a cozy space to connect at Common Grounds Coffee House." />
+        <meta property="og:image" content="https://common-grounds.vercel.app/images/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Common Grounds Coffee House interior with coffee and pastries" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Common Grounds Coffee House – Coffee, Pastries & Community" />
+        <meta name="twitter:description" content="Sip, savor, and stay awhile at Common Grounds Coffee House – your local spot for great coffee and warm community." />
+        <meta name="twitter:image" content="https://common-grounds.vercel.app/images/og-image.jpg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -117,7 +93,7 @@ export default function RootLayout({
       </head>
       <body className={poppins.className}>
         <main>
-          <Nav />
+          {!isStudio && <Nav />}
           {children}
           <Analytics />
         </main>

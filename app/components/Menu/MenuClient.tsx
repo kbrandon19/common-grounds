@@ -71,7 +71,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
 
   return (
     <div className="h-full w-full">
-      <div className="w-full h-auto mt-40">
+      <div className="w-full h-auto mt-20">
         {/* Mobile Layout */}
         <div className="block lg:hidden relative px-4">
           <div className="overflow-scroll" ref={emblaRef}>
@@ -89,7 +89,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
                     className={`flex flex-col items-center p-2 w-full transition-all cursor-pointer ${
                       activeCategory === category.foodCategory
                         ? "text-white font-bold bg-[#9C002B] rounded-md"
-                        : "text-gray-500"
+                        : " text-gray-500 grayscale"
                     }`}
                   >
                     <div className="w-10 h-10 flex justify-center items-center">
@@ -150,7 +150,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
         </div>
 
         {/* Food Items */}
-        <div className="w-3/4 mx-auto mt-16 h-auto space-y-4 pb-20">
+        <div className="w-3/4 mx-auto mt-16 h-[500px] overflow-scroll space-y-4 pb-20">
           {initialData.menusection
             .filter((category) => category.foodCategory === activeCategory)
             .map((category) => (

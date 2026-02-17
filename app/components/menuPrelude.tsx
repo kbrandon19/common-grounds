@@ -21,7 +21,7 @@ async function menuPrelude() {
   return (
     <div className="h-auto w-auto mb-16" id="Menu">
       {/* Background section */}
-      <div className="relative w-full h-60 flex items-start justify-center ">
+      <div className="relative w-full h-60 flex items-center justify-center ">
         
         <div className="absolute inset-0 -z-10 ">
           <div className="absolute w-full h-60 -top-5 lg:top-0 left-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1770431822/Common%20Grounds/Background/Frame_3_gnmkbi.png')] bg-repeat-x bg-[length:1000px_auto] bg-center-top" />
@@ -48,16 +48,15 @@ async function menuPrelude() {
          
         </div>
 
-        <div className="text-center text-white px-4 pt-10">
-          <h3 className="text-xs uppercase pb-2">- {data.sectiontagline} -</h3>
-          <h2 className="text-5xl font-bold">{data.sectiontitle}</h2>
-        </div>
       </div>
 
       {/* Section body */}
       <div className="text-center mx-auto h-auto">
-        <div className="max-w-lg px-6 lg:px-0 text-2xl 2xl:text-3xl mx-auto">
-          <p className="text-gray-700 text-2xl">{data.sectiontext}</p>
+        <div className="max-w-lg px-6 lg:px-0  mx-auto">
+                    <h3 className="text-xs uppercase pb-2">- {data.sectiontagline} -</h3>
+
+          <h2 className="text-5xl font-bold">{data.sectiontitle}</h2>
+          <p className="text-gray-700 text-xl mt-4">{data.sectiontext}</p>
         </div>
       </div>
     </div>

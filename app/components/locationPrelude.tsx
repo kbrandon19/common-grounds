@@ -26,7 +26,7 @@ async function locationPrelude() {
   if (!data || !data.storehours) {
     return (
       <>
-        <div className="w-full h-64 drop-shadow-md relative">
+        <div className="w-full h-64 drop-shadow-md relative" id="Contact">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 321"
@@ -89,7 +89,7 @@ async function locationPrelude() {
   }
 
   return (
-    <div className="w-full h-auto relative" id="Contact">
+    <div className="w-full h-auto relative" >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#0f4c4d"
@@ -101,20 +101,8 @@ async function locationPrelude() {
 
      <div className="w-full h-screen absolute inset-x-0 -top-5 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground-Green_n7d9mn.png')] bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-top-left opacity-25" />
 
-      <div className="absolute inset-0 -z-10">
-        {/* <svg
-          className="w-full h-full"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 321"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#9C002B"
-            fillOpacity="1"
-            stroke="none"
-            d="M0,160L120,181.3C240,203,480,245,720,245.3C960,245,1200,203,1320,181.3L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
-          ></path>
-        </svg> */}
+      <div className="absolute inset-0 -z-10" id="Contact">
+
       </div>
 
       {/* Top Banner */}
