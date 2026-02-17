@@ -47,7 +47,7 @@ export interface MenuItemsArr{
 }
 
 export interface plateItemsArr{
-    dishPhoto:Image;
+    dishPhoto?:Image;
     dishName:string;
     dishDescription:string;
     price:string;

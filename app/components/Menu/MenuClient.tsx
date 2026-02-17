@@ -158,31 +158,34 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
                 key={category.foodCategory}
                 className="grid md:grid-cols-2 gap-4"
               >
-                {category.plate?.map((dish) => (
-                  <div
-                    key={dish.dishName}
-                    className="flex items-center flex-col  md:flex-row gap-4"
-                  >
-                    <div className="w-full h-52 relative rounded-md overflow-hidden">
-                      <Image
-                        src={urlForImage(dish.dishPhoto)}
-                        alt={dish.dishName}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        placeholder="empty"
-                        className="object-cover md:object-cover"
-                      />
-                    </div>
-                    <div className="w-full mx-auto text-left">
-                      <h4 className="text-lg font-bold">{dish.dishName}</h4>
-                      <p className="w-full text-md text-gray-600">
-                        {dish.dishDescription}
-                      </p>
-                      <p className="text-md font-semibold mt-1">{dish.price}</p>
-                    </div>
-                    <hr />
-                  </div>
-                ))}
+{category.plate?.map((dish) => (
+  <div
+    key={dish.dishName}
+    className="flex items-center flex-col md:flex-row gap-4"
+  >
+    {dish.dishPhoto ? (
+      <div className="w-full h-52 relative rounded-md overflow-hidden">
+        <Image
+          src={urlForImage(dish.dishPhoto)}
+          alt={dish.dishName}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          placeholder="empty"
+          className="object-cover md:object-cover"
+        />
+      </div>
+    ) : null}
+
+    <div className="w-full mx-auto text-left">
+      <h4 className="text-lg font-bold">{dish.dishName}</h4>
+      <p className="w-full text-md text-gray-600">
+        {dish.dishDescription}
+      </p>
+      <p className="text-md font-semibold mt-1">{dish.price}</p>
+    </div>
+    <hr />
+  </div>
+))}
               </div>
             ))}
         </div>

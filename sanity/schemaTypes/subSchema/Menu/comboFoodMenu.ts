@@ -8,7 +8,7 @@ export const comboFoodMenu = defineType({
     {name:'dishPhoto',
       title:'Dish Photo',
       type:'image',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.optional(),
     },
     {
       name: "dishName",
@@ -21,7 +21,7 @@ export const comboFoodMenu = defineType({
       name:'dishDescription',
       title:"Dish Description",
       type:'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.optional(),
     },
     {
         name:'price',
