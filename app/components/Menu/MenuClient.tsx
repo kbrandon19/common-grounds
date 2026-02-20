@@ -70,7 +70,8 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
   }
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full" >
+      
       <div className="w-full h-auto mt-20">
         {/* Mobile Layout */}
         <div className="block lg:hidden relative px-4">

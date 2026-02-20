@@ -21,36 +21,42 @@ async function HeroSection() {
   const data: Hero = await getData();
   return (
     // Outter Container
-    <div className="relative w-full h-screen bg-[#9C002B] text-white " id="/">
-      {/* Background Image Vector */}
-      <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground_pwxndl.png')] bg-repeat bg-[length:1000px_auto] bg-center-top" />
+  
+      <div className="relative w-full h-screen bg-[#9C002B] text-white " style={{ height: "calc(100vh)" }} id="/">
+        {/* Background Image Vector */}
+        <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground_pwxndl.png')] bg-repeat bg-[length:1000px_auto] bg-center-top"    style={{ height: "calc(100vh + 120px)" }}/>
 
-      {/* Container for Hero Text and Image */}
-      <div className="w-auto h-screen relative z-5 flex flex-col lg:flex-row gap-y-10 justify-end md:justify-around items-center content-center pb-0">
-        {/* Hero Text */}
-        <div className=" md:p-0 flex flex-col items-center text-center lg:text-left lg:pl-16  gap-y-2 mt-36 lg:mt-0">
-          <h1 className=" p-2 text-6xl md:text-8xl lg:text-8xl xl:text-9xl lg:leading-20 xl:leading-28">
-            {data.sectiontext}
-          </h1>
+        {/* Container for Hero Text and Image */}
+        <div className="w-auto h-screen relative z-5 flex flex-col lg:flex-row gap-y-10 justify-end md:justify-around items-center content-center pb-0">
+          {/* Hero Text */}
+          <div className=" md:p-0 flex flex-col items-center text-center lg:text-left lg:pl-16  gap-y-2 mt-36 lg:mt-0">
+            <h1 className=" p-2 text-6xl md:text-8xl lg:text-8xl xl:text-9xl lg:leading-20 xl:leading-28">
+              {data.sectiontext}
+            </h1>
 
-          {/* Google Review */}
-          <Rating />
-        </div>
+            {/* Google Review */}
+            <Rating />
+          </div>
 
-        {/* Hero Image */}
-        <div className="  w-full h-full relative  lg:mt-24 xl:mt-36">
-          <Image
-            priority
-            src={urlForImage(data.backgroundImage)}
-            alt="Background Image"
-            fill
-            className="object-contain"
-          />
-        </div>
+          {/* Hero Image */}
+          <div className="  w-full h-full relative  lg:mt-24 xl:mt-36">
+            <Image
+              priority
+              src={urlForImage(data.backgroundImage)}
+              alt="Background Image"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>      
+        
+        {/* start of wave svg */}
+        <div className="w-full h-80"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#9C002B" fillOpacity="1" d="M0,96L120,117.3C240,139,480,181,720,165.3C960,149,1200,75,1320,37.3L1440,0L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg></div>
+         
+
       </div>
 
-      
-    </div>
+    
   );
 }
 

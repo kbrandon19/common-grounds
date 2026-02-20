@@ -71,7 +71,7 @@ export default function Nav() {
   if (!data) return null;
 
   return (
-    <div className={`text-black w-full h-auto px-6 py-4 fixed z-10 transition-colors duration-300 ${
+    <div className={`text-black w-full h-auto px-4 py-4 fixed z-10 transition-colors duration-300 ${
       navBgColor ? 'bg-[#9C002B]' : 'bg-transparent'
     }`}>
       <div className="w-auto h-auto px-4 2xl:px-16 flex flex-row justify-between items-center">
@@ -79,8 +79,8 @@ export default function Nav() {
         <div className="flextems-center">
           <Link href="/">
             <Image
-              height={75}
-              width={75}
+              height={50}
+              width={50}
               src={urlForImage(data.logo)}
               alt="Common Grounds Logo"
             />
