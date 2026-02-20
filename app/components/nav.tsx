@@ -93,7 +93,7 @@ export default function Nav() {
             {data.navigationlinks.map((link, idx) => (
               <li key={idx} className="text-white">
                 <Link
-                  href={`/#${link.linkname}`}
+                  href={`#${link.linkname}`}
                   className="text-md uppercase tracking-wide hover:text-[#6d001e] transition-colors"
                 >
                   {link.linkname}
@@ -138,7 +138,7 @@ export default function Nav() {
               isOpen ? 'text-black' : (navBgColor ? 'text-white' : 'text-black')
             }`}
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={32}/> : <Menu size={32} className="text-white"/>}
           </button>
         </div>
       </div>
@@ -154,7 +154,7 @@ export default function Nav() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 bg-white z-40 flex flex-col text-center items-center justify-center"
           >
-            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-left-top opacity-50" />
+            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-left-top opacity-50 bg-[length:1000px_auto] " />
 
             <motion.ul
               initial="hidden"

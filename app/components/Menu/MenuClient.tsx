@@ -151,7 +151,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
         </div>
 
         {/* Food Items */}
-        <div className="w-3/4 mx-auto mt-16 h-[500px] overflow-scroll space-y-4 pb-20">
+        <div className="w-3/4 mx-auto mt-16 h-[500px] overflow-y-auto space-y-4">
           {initialData.menusection
             .filter((category) => category.foodCategory === activeCategory)
             .map((category) => (
