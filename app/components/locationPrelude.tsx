@@ -87,14 +87,17 @@ async function locationPrelude() {
   }
 
   return (
-    <div className="w-full h-auto relative " id="Contact">
-      <div className="w-full h-150 absolute inset-x-0 top-0 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground-Green_n7d9mn.png')] bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-top-left opacity-25" />
+<>
+    <div className="w-full h-10" id="Contact"></div>
+    <div className="w-full h-auto relative ">
+      <div className="w-full h-170 absolute inset-x-0 top-0 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground-Green_n7d9mn.png')] bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-top-left opacity-25" />
 
       <div className="w-full h-auto  " >
         <svg
           viewBox="0 0 1440 200"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="-mb-1"
         >
              {/* <path fill="#0f4c4d" fill-opacity="1" d="M0,64L48,58.7C96,53,192,43,288,53.3C384,64,480,96,576,122.7C672,149,768,171,864,181.3C960,192,1056,192,1152,170.7C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path> */}
                <path fill="#0f4c4d" fillOpacity="1" d="M0,96L48,101.3C96,107,192,117,288,112C384,107,480,85,576,90.7C672,96,768,128,864,122.7C960,117,1056,75,1152,64C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -108,9 +111,9 @@ async function locationPrelude() {
 
       {/* Top Banner */}
       <div className="w-full h-120 pt-0 flex flex-col items-top justify-start bg-[#0f4c4d] ">
-        <div className="w-full lg:w-2/3 h-auto mx-auto text-center text-white">
+        <div className="w-full lg:w-2/3 h-auto mx-auto text-center text-white p-4 md:p-0">
           <h3 className="text-xs uppercase pb-2 ">- Ven a visitarnos -</h3>
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-3xl md:text-5xl font-bold p-2 md:p-0">
             Convenientemente ubicado en el corazón de Salinas. Estamos aquí para
             servirle desde temprano por la mañana hasta la tarde.
           </h2>
@@ -118,7 +121,7 @@ async function locationPrelude() {
       </div>
 
       {/* Store Hours + Social Media */}
-      <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto -mt-50 mb-12">
+<div className="relative z-6 flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto -mt-40 md:-mt-50 mb-12">
         {/* Google Map Section */}
         <div className="w-full md:w-2/3 h-auto md:h-auto aspect-video md:aspect-auto">
           <Link
@@ -163,6 +166,7 @@ async function locationPrelude() {
       </div>
       
     </div>
+    </>
   );
 }
 

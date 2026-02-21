@@ -11,15 +11,15 @@ function contact() {
   };
 
   return (
-    <div className="w-full h-auto relative p-4 text-sm text-center flex items-center justify-between ">
+    <div className="w-full h-auto relative pb-2 text-sm text-center flex flex-col-reverse md:flex-row items-center justify-between ">
       <p className="w-full text-xs">
         Copywright © 2026 Common Grounds Coffee and Waffle House. All Rights Reserved.
         Designed & Developed by{" "}
-        <a href="dfcreativestudio.com" target="_blank">
+        <a href="https://www.dfcreativestudio.com" target="_blank">
           DFCS
         </a>
       </p>
-      <div className="w-full h-full flex justify-end items-center ">
+      <div className="w-full h-full flex justify-center md:justify-end items-center m-6 md:m-0">
         <button
           onClick={scrollToTop}
           className="px-4 py-2 bg-[#0f4c4d] text-white rounded hover:bg-[#196360] transition-colors duration-200 cursor-pointer"

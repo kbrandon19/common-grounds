@@ -138,7 +138,7 @@ export default function Nav() {
               isOpen ? 'text-black' : (navBgColor ? 'text-white' : 'text-black')
             }`}
           >
-            {isOpen ? <X size={32}/> : <Menu size={32} className="text-white"/>}
+            {isOpen ? <X size={35}/> : <Menu size={35} className="text-white"/>}
           </button>
         </div>
       </div>
