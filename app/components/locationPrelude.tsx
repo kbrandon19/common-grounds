@@ -99,7 +99,7 @@ async function locationPrelude() {
           xmlns="http://www.w3.org/2000/svg"
           className="-mb-1"
         >
-             {/* <path fill="#0f4c4d" fill-opacity="1" d="M0,64L48,58.7C96,53,192,43,288,53.3C384,64,480,96,576,122.7C672,149,768,171,864,181.3C960,192,1056,192,1152,170.7C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path> */}
+          
                <path fill="#0f4c4d" fillOpacity="1" d="M0,96L48,101.3C96,107,192,117,288,112C384,107,480,85,576,90.7C672,96,768,128,864,122.7C960,117,1056,75,1152,64C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
 
 
@@ -130,13 +130,13 @@ async function locationPrelude() {
           >
             {/* Disabled to prevent unnecessary API calls */}
 
-            {/* <Image
+            <Image
               src={`https://maps.googleapis.com/maps/api/staticmap?center=-2.2052105,-80.9597101&zoom=16&scale=2&size=500x300&markers=color:red%7C-2.2052105,-80.9597101&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API}`}
               alt="Common Grounds Coffee and Waffle House location"
               width={500}
               height={300}
               className="w-full h-full object-cover"
-            /> */}
+            /> 
           </Link>
         </div>
 
