@@ -88,7 +88,7 @@ async function locationPrelude() {
 
   return (
 <>
-    <div className="w-full h-10" id="Contact"></div>
+    <div className="w-full h-10" id="Contactenos"></div>
     <div className="w-full h-auto relative ">
       <div className="w-full h-170 absolute inset-x-0 top-0 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground-Green_n7d9mn.png')] bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-top-left opacity-25" />
 
