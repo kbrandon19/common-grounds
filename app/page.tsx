@@ -2,7 +2,7 @@
 import Hero from './components/hero'
 import LocationPrelude from './components/locationPrelude'
 import Menu from './components/Menu/page'
-import MenuPrelude from './components/menuPrelude'
+import MenuPrelude from './components/Banner/menuPrelude'
 import Footer from './components/footer'
 
 

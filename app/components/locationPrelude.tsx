@@ -5,6 +5,7 @@ import { client } from "../../sanity/lib/client";
 import { Hours } from "@/lib/interface";
 import Image from "next/image";
 import Link from "next/link";
+import ContactBanner from "./Banner/contactBanner";
 
 // Query from Sanity
 async function getData(): Promise<Hours | null> {
@@ -109,16 +110,8 @@ async function locationPrelude() {
       </div>
 
 
-      {/* Top Banner */}
-      <div className="w-full h-120 pt-0 flex flex-col items-top justify-start bg-[#0f4c4d] ">
-        <div className="w-full lg:w-2/3 h-auto mx-auto text-center text-white p-4 md:p-0">
-          <h3 className="text-xs uppercase pb-2 ">- Ven a visitarnos -</h3>
-          <h2 className="text-3xl md:text-5xl font-bold p-2 md:p-0">
-            Convenientemente ubicado en el corazón de Salinas. Estamos aquí para
-            servirle desde temprano por la mañana hasta la tarde.
-          </h2>
-        </div>
-      </div>
+      {/* Contact Banner */}
+      <ContactBanner />
 
       {/* Store Hours + Social Media */}
 <div className="relative z-6 flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto -mt-40 md:-mt-50 mb-12">

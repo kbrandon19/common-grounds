@@ -12,22 +12,27 @@ interface PlaceData {
 
 export default function PlaceInfo() {
   const [data, setData] = useState<PlaceData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    // Temporarily disabled until API key is set
-    // async function fetchPlace() {
-    //   const res = await fetch("/api/getPlace?q=Common Grounds Salinas Ecuador");
-    //   const json = await res.json();
-    //   setData(json);
-    // }
-    // fetchPlace();
-    // Mock data for now
-    setData({
-      name: "Common Grounds Salinas Ecuador",
-      address: "Sample Address",
-      rating: 4.5,
-      totalReviews: 150
-    });
+    async function fetchPlace() {
+      try {
+        const res = await fetch("/api/getPlace?q=Common Grounds Salinas Ecuador");
+
+        if (!res.ok) throw new Error("Failed to fetch");
+
+        const json = await res.json();
+        setData(json);
+      } catch (err) {
+        console.error("Google Places fetch error:", err);
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchPlace();
   }, []);
 
   const rating = data?.rating ?? 0;
@@ -35,21 +40,20 @@ export default function PlaceInfo() {
 
   return (
     <div
-      className={`mt-4 w-full h-auto flex flex-row md:gap-4 md:flex-row justify-center items-start lg:justify-start px-4 gap-2 transition duration-300 ${
-        !data ? "blur-sm opacity-50" : "blur-0 opacity-100"
+      className={`mt-4 w-full flex flex-row md:gap-4 justify-center items-start lg:justify-start px-4 gap-2 transition duration-300 ${
+        loading ? "blur-sm opacity-50" : "blur-0 opacity-100"
       }`}
     >
-      <div className="h-auto w-auto flex flex-row items-center gap-2">
-        {/* Rating number */}
-        <p className="font-medium">{rating.toFixed(1)}</p>
-
-        {/* Dynamic stars */}
+      <div className="flex flex-row items-center gap-2">
+        <p className="text-lg">{rating.toFixed(1)}</p>
         <Star rating={rating} />
       </div>
 
-      {/* Review count */}
-      <div>
-        {data ? `${totalReviews} Google Reviews` : "Loading reviews..."}
+      <div >
+        {loading && "Loading reviews..."}
+        {error && "Unable to load reviews"}
+        <p className="text-lg ">{!loading && !error && `${totalReviews} Google Reviews`}</p>
+        
       </div>
     </div>
   );

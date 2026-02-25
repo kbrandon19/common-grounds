@@ -1,6 +1,6 @@
 'use client'
 
-import Nav from "./components/nav";
+import Nav from "./components/header";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { usePathname } from "next/navigation";

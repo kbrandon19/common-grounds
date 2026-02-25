@@ -152,9 +152,9 @@ export default function Nav() {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-white z-40 flex flex-col text-center items-center justify-center"
+            className="fixed inset-0 bg-white z-40 flex flex-col text-left items-center justify-center"
           >
-            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-left-top opacity-50 bg-[length:1000px_auto] " />
+            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-left-top opacity-30 bg-[length:500px_auto] " />
 
             <motion.ul
               initial="hidden"
@@ -174,7 +174,7 @@ export default function Nav() {
                   },
                 },
               }}
-              className="space-y-8 text-3xl font-semibold text-[#9C002B] uppercase relative z-10"
+              className="space-y-8 text-4xl font-semibold text-[#9C002B] uppercase relative z-10"
             >
               {data.navigationlinks.map((link, idx) => (
                 <motion.li
@@ -212,7 +212,7 @@ export default function Nav() {
                   },
                 }}
                 transition={{ duration: 0.3 }}
-                className="w-full h-auto flex flex-row items-center gap-4 justify-center"
+                className="w-full h-auto flex flex-row items-center gap-4 justify-start"
               >
                 {data.socialMediaLinks.map((link, idx) => (
                   <motion.div
@@ -228,8 +228,8 @@ export default function Nav() {
                       <Image
                         src={urlForImage(link.icon)}
                         alt={link.socialName}
-                        width={24}
-                        height={24}
+                        width={35}
+                        height={35}
                       />
                     </Link>
                   </motion.div>
