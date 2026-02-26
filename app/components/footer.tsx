@@ -11,7 +11,7 @@ function contact() {
   };
 
   return (
-    <div className="w-full h-auto relative pb-2 text-sm text-center flex flex-col-reverse md:flex-row items-center justify-between ">
+    <div className="w-full h-auto relative px-10 pb-2 text-sm text-center flex flex-col-reverse md:flex-row items-center justify-between ">
       <p className="w-full text-xs">
         Copywright © 2026 Common Grounds Coffee and Waffle House. All Rights Reserved.
         Designed & Developed by{" "}
