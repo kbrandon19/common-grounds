@@ -24,7 +24,9 @@ async function HeroSection() {
   
       <div className="relative w-full h-screen bg-[#9C002B] text-white " style={{ height: "calc(100vh)" }} id="/">
         {/* Background Image Vector */}
-        <div className="w-full h-[calc(100vh+30px)] md:h-[calc(100vh+110px)] absolute inset-x-0 top-0 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground_pwxndl.png')] bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-center-top"    />
+        <div className="w-full h-[calc(100vh+30px)] md:h-[calc(100vh+110px)] absolute inset-x-0 top-0 z-0  bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-center-top"   style={{
+    backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.png)`
+  }} />
 
         {/* Container for Hero Text and Image */}
         <div className="w-auto h-screen relative z-5 flex flex-col lg:flex-row  gap-y-2 md:justify-around items-center content-center pb-0">

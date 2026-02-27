@@ -5,9 +5,9 @@ export const revalidate = 0;
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { client } from "../../sanity/lib/client";
+import { client } from "@/sanity/lib/client";
 import { Navigation } from "@/lib/interface";
-import { urlForImage } from "../../sanity/lib/image";
+import { urlForImage } from "@/sanity/lib/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 

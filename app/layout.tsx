@@ -1,9 +1,9 @@
-'use client'
+// 'use client'
 
-import Nav from "./components/header";
+import HeaderWrapper from "./components/Header/HeaderWrapper";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -14,9 +14,9 @@ const poppins = Poppins({
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
-  const pathname = usePathname();
-  const isStudio = pathname?.startsWith('/studio');
+}: {
+  children: React.ReactNode;
+}) {
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -85,7 +85,7 @@ export default function RootLayout({
       </head>
       <body className={poppins.className}>
         <main>
-          {!isStudio && <Nav />}
+          <HeaderWrapper/>
           {children}
           <Analytics />
         </main>
