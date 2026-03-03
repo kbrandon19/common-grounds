@@ -6,6 +6,7 @@ import { Hours } from "@/lib/interface";
 import Image from "next/image";
 import Link from "next/link";
 import ContactBanner from "./Banner/contactBanner";
+import SocialIcons from "./SocialMedia/social-icons";
 
 // Query from Sanity
 async function getData(): Promise<Hours | null> {
@@ -154,6 +155,10 @@ async function locationPrelude() {
                 </span>
               </div>
             ))}
+          </div>
+
+          <div>
+            <SocialIcons />
           </div>
         </div>
       </div>
