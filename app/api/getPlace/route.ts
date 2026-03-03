@@ -17,7 +17,7 @@ export async function GET(req: Request) {
     const findRes = await fetch(
       `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(
         query
-      )}&inputtype=textquery&fields=place_id&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API}`
+      )}&inputtype=textquery&fields=place_id&key=${process.env.GOOGLE_MAPS_API}`
     );
 
     const findData = await findRes.json();
@@ -27,7 +27,7 @@ export async function GET(req: Request) {
 
     // 2️⃣ Get place details
     const detailsRes = await fetch(
-      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,formatted_address,rating,user_ratings_total&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API}`
+      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,formatted_address,rating,user_ratings_total&key=${process.env.GOOGLE_MAPS_API}`
     );
 
     const detailsData = await detailsRes.json();
