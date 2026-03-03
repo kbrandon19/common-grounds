@@ -59,7 +59,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="es">
+    <html lang="es-EC">
       <head>
         <title>Common Grounds Coffee House </title>
         <meta name="description" content="Common Grounds Coffee House is a cozy breakfast/brunch café offering a mix of Ecuadorian and American-style dishes." />
