@@ -124,10 +124,10 @@ async function locationPrelude() {
             {/* Disabled to prevent unnecessary API calls */}
 
             <Image
-              src={`https://maps.googleapis.com/maps/api/staticmap?center=-2.2052105,-80.9597101&zoom=16&scale=2&size=500x300&markers=color:red%7C-2.2052105,-80.9597101&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API}`}
+              src={`https://maps.googleapis.com/maps/api/staticmap?center=-2.2052105,-80.9597101&zoom=16&scale=2&size=500x200&markers=color:red%7C-2.2052105,-80.9597101&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API}`}
               alt="Common Grounds Coffee and Waffle House location"
               width={500}
-              height={300}
+              height={200}
               className="w-full h-full object-cover"
             /> 
           </Link>

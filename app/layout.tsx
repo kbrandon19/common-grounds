@@ -84,11 +84,11 @@ export default function RootLayout({
         />
       </head>
       <body className={poppins.className}>
-        <main>
+        
           <HeaderWrapper/>
-          {children}
+          <main>{children}</main>
           <Analytics />
-        </main>
+        
       </body>
     </html>
   );

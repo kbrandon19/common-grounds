@@ -186,7 +186,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
       </p>
       <p className="text-md font-semibold mt-1">{dish.price}</p>
     </div>
-    <hr />
+    
   </div>
 ))}
               </div>
