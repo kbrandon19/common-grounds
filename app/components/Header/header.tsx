@@ -154,7 +154,9 @@ export default function Nav() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 bg-white z-40 flex flex-col text-left items-center justify-center"
           >
-            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-[url('/images/CGBackground.png')] bg-repeat bg-left-top opacity-30 bg-[length:500px_auto] " />
+            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-repeat bg-left-top opacity-30 bg-[length:500px_auto] " style={{
+    backgroundImage: `url(https://res.cloudinary.com/${process.env.CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp)`
+  }} />
 
             <motion.ul
               initial="hidden"
