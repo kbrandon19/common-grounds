@@ -2,10 +2,10 @@ export const revalidate = 0;
 
 import React from "react";
 import Image from "next/image";
-import { client } from "../../sanity/lib/client";
+import { client } from "../../../sanity/lib/client";
 import { Hero } from "@/lib/interface";
-import { urlForImage } from "../../sanity/lib/image";
-import Rating from "../GoogleReview/placeRating";
+import { urlForImage } from "../../../sanity/lib/image";
+import Rating from "../../GoogleReview/placeRating";
 
 async function getData() {
   const query = `
@@ -17,7 +17,7 @@ async function getData() {
   return client.fetch<Hero>(query);
 }
 
-async function HeroSection() {
+async function Hero01() {
   const data: Hero = await getData();
   return (
     // Outter Container
@@ -64,4 +64,4 @@ async function HeroSection() {
   );
 }
 
-export default HeroSection;
+export default Hero01;

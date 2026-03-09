@@ -40,7 +40,7 @@ export default function PlaceInfo() {
 
   return (
     <div
-      className={`mt-4 w-full flex flex-row md:gap-4 justify-center items-start lg:justify-start px-4 gap-2 transition duration-300 ${
+      className={`mt-4 w-full flex flex-col md:flex-row md:gap-4 justify-center items-center md:items-start lg:justify-center px-4 gap-2 transition duration-300 ${
         loading ? "blur-sm opacity-50" : "blur-0 opacity-100"
       }`}
     >
