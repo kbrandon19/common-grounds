@@ -72,7 +72,7 @@ export default function Nav() {
 
   return (
     <div className={`text-black w-full h-auto px-4 py-4 fixed z-10 transition-colors duration-300 ${
-      navBgColor ? 'bg-[#9C002B]' : 'bg-transparent'
+      navBgColor ? 'md:bg-[#9C002B] bg-transparent' : 'bg-transparent'
     }`}>
       <div className="w-auto h-auto px-4 2xl:px-16 flex flex-row justify-between items-center">
         {/* Logo */}
@@ -135,10 +135,10 @@ export default function Nav() {
               setIsOpen(!isOpen);
             }}
             className={`p-2 cursor-pointer transition-colors ${
-              isOpen ? 'text-black' : (navBgColor ? 'text-white' : 'text-black')
+              isOpen ? 'text-black' : (navBgColor ? 'text-black' : 'text-black')
             }`}
           >
-            {isOpen ? <X size={35}/> : <Menu size={35} className="text-white"/>}
+            {isOpen ? <X size={35}/> : <Menu size={35} className="text-black"/>}
           </button>
         </div>
       </div>
@@ -155,7 +155,7 @@ export default function Nav() {
             className="fixed inset-0 bg-white z-40 flex flex-col text-left items-center justify-center"
           >
             <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-repeat bg-left-top opacity-30 bg-[length:500px_auto] " style={{
-    backgroundImage: `url(https://res.cloudinary.com/${process.env.CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp)`
+    backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772429912/Common%20Grounds/Background/Red_Coffee_Bean.webp)`
   }} />
 
             <motion.ul

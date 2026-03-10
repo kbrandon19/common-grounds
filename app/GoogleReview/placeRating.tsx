@@ -40,19 +40,19 @@ export default function PlaceInfo() {
 
   return (
     <div
-      className={`mt-4 w-full flex flex-col md:flex-row md:gap-4 justify-center items-center md:items-start lg:justify-center px-4 gap-2 transition duration-300 ${
+      className={`mt-4 w-full flex flex-row gap-2 md:gap-4 justify-center items-center lg:justify-center px-4 transition duration-300 ${
         loading ? "blur-sm opacity-50" : "blur-0 opacity-100"
       }`}
     >
       <div className="flex flex-row items-center gap-2">
-        <p className="text-lg">{rating.toFixed(1)}</p>
+        <p className="text-md md:text-lg">{rating.toFixed(1)}</p>
         <Star rating={rating} />
       </div>
 
       <div >
         {loading && "Loading reviews..."}
         {error && "Unable to load reviews"}
-        <p className="text-lg ">{!loading && !error && `${totalReviews} Google Reviews`}</p>
+        <p className="text-md md:text-lg ">{!loading && !error && `${totalReviews} Google Reviews`}</p>
         
       </div>
     </div>

@@ -27,7 +27,7 @@ async function Hero02() {
       <div
         className="w-full h-[calc(100vh+30px)] md:h-[calc(100vh+110px)] absolute inset-x-0 top-0 z-0 bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-center"
         style={{
-          backgroundImage: `url(https://res.cloudinary.com/${process.env.CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp)`,
+          backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp)`,
         }}
       />
 
@@ -44,12 +44,12 @@ async function Hero02() {
         </div>
 
         {/* Food photo + wave mask */}
-        <div className="w-full h-150 relative overflow-hidden mt-10">
+        <div className="w-full h-150 relative overflow-hidden mt-40 md:mt-0">
           {/* Food background image — full area */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url(https://res.cloudinary.com/${process.env.CLOUD_NAME}/image/upload/v1772987751/Common%20Grounds/Background/rachel-park-hrlvr2ZlUNk-unsplash_ch5keh.jpg)`,
+              backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772987751/Common%20Grounds/Background/rachel-park-hrlvr2ZlUNk-unsplash_ch5keh.jpg)`,
             }}
           />
 
@@ -69,7 +69,7 @@ async function Hero02() {
               >
                 <rect width="500" height="500" fill="#9C002B" />
                 <image
-                  href={`https://res.cloudinary.com/${process.env.CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp`}
+                  href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp`}
                   x="0"
                   y="0"
                   width="500"
@@ -100,6 +100,8 @@ async function Hero02() {
           </svg>
         </div>
       </div>
+      {/* Creates artifial spacing for mobilee section to prevent wave from covering content */}
+      <div id="Menú" className="w-full h-48 -mt-40"></div>
     </div>
   );
 }

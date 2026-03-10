@@ -180,11 +180,14 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
     ) : null}
 
     <div className="w-full mx-auto text-left">
-      <h4 className="text-lg font-bold">{dish.dishName}</h4>
+      <div className="flex flex-row gap-2 items-center">
+        <h4 className="text-lg font-bold">{dish.dishName}</h4> |
+      <p className="text-md font-semibold mt-1">{dish.price}</p></div>
+      
       <p className="w-full text-md text-gray-600">
         {dish.dishDescription}
       </p>
-      <p className="text-md font-semibold mt-1">{dish.price}</p>
+      
     </div>
     
   </div>

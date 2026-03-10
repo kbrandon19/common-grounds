@@ -21,7 +21,7 @@ async function menuPrelude() {
   return ( 
   
   <>
-  <div className="w-full h-30 md:h-50" />
+  <div className="w-full h-30 md:h-50 mt-30 md:mt-0"  />
 
     <div className="h-auto w-auto mb-10"  >
       {/* Background section */}

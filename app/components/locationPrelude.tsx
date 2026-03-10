@@ -6,7 +6,7 @@ import { Hours } from "@/lib/interface";
 import Image from "next/image";
 import Link from "next/link";
 import ContactBanner from "./Banner/contactBanner";
-import SocialIcons from "./SocialMedia/social-icons";
+// import SocialIcons from "./SocialMedia/social-icons";
 
 // Query from Sanity
 async function getData(): Promise<Hours | null> {
@@ -48,20 +48,9 @@ async function locationPrelude() {
           <div className="w-full h-screen absolute inset-x-0 -top-10 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground-Green_n7d9mn.png')] bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-top-left opacity-25" />
 
           {/* Top Banner */}
-          <div
-            className="w-full h-screen px-4 flex flex-col items-center justify-center bg-[#0f4c4d] "
-            id="Contact"
-          >
-            <div className="w-full lg:w-2/3 h-auto mx-auto text-center text-white ">
-              <h3 className="text-xs uppercase pb-2 mb-4">
-                - Ven a visitarnos -
-              </h3>
-              <h2 className="text-4xl md:text-5xl font-bold">
-                Convenientemente ubicado en el corazón de Salinas. Estamos aquí
-                para servirle desde temprano por la mañana hasta la tarde.
-              </h2>
-            </div>
-          </div>
+
+<ContactBanner/>
+          
           {/* Fallback for no data */}
           <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto -mt-12 mb-12">
             <div className="w-full md:w-3/4 h-96 md:h-auto aspect-video md:aspect-auto">
@@ -90,9 +79,9 @@ async function locationPrelude() {
 
   return (
 <>
-    <div className="w-full h-10" id="Contactenos"></div>
-    <div className="w-full h-auto relative mb-30">
-      <div className="w-full h-170 absolute inset-x-0 top-0 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground-Green_n7d9mn.png')] bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-top-left opacity-25" style={{backgroundImage: `url(https://res.cloudinary.com/${process.env.CLOUD_NAME}/image/upload/v1772162928/Common%20Grounds/Background/Green_Coffee_Bean.webp)`}} />
+    <div className="w-full h-10 " id="Contactenos"></div>
+    <div className="w-full h-auto relative mb-30 ">
+      <div className="w-full h-170 absolute inset-x-0 top-0 z-0 bg-[url('https://res.cloudinary.com/dujkjy2e2/image/upload/v1758307490/Common%20Grounds/Background/CGbackground-Green_n7d9mn.png')] bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-top-left opacity-25" style={{backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772162928/Common%20Grounds/Background/Green_Coffee_Bean.webp)`}} />
 
       <div className="w-full h-auto  " >
         <svg
@@ -115,14 +104,13 @@ async function locationPrelude() {
       <ContactBanner />
 
       {/* Store Hours + Social Media */}
-<div className="relative z-6 flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto -mt-40 md:-mt-50 mb-12">
+<div className="relative z-6 flex flex-col-reverse md:flex-row bg-white md:rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto -mt-40 md:-mt-50 mb-12">
         {/* Google Map Section */}
-        <div className="w-full md:w-2/3 h-auto md:h-auto aspect-video md:aspect-auto">
+        <div className="w-full md:w-2/3 h-auto md:h-auto aspect-video md:aspect-auto px-2 md:px-0">
           <Link
             href="https://maps.app.goo.gl/BZ49F8m6fNjXR4H8A"
             className="cursor-pointer"
           >
-            {/* Disabled to prevent unnecessary API calls */}
 
             <Image
               src={`https://maps.googleapis.com/maps/api/staticmap?center=-2.2052105,-80.9597101&zoom=16&scale=2&size=500x200&markers=color:red%7C-2.2052105,-80.9597101&key=${process.env.GOOGLE_MAPS_API}`}
@@ -132,18 +120,20 @@ async function locationPrelude() {
               className="w-full h-full object-cover"
             /> 
           </Link>
+          
         </div>
 
         {/* Store Hours Section */}
-        <div className="w-full md:w-1/3 p-8 flex flex-col justify-center ">
-          <h2 className="text-3xl font-bold text-gray-800 mb-1">
+        <div className="w-full md:w-1/3 p-8 flex flex-col justify-center">
+          {/* <h2 className="text-3xl font-bold text-gray-800 mb-1">
             Common Grounds
-          </h2>
-          <p className="text-orange-600 font-medium mb-6">
-            Ubicado en San Lorenzo, Salinas
+          </h2> */}
+
+          <p className="text-orange-600 font-medium mb-2 ">
+            Horarios de Atención
           </p>
 
-          <div className="space-y-3">
+          <div className="space-y-1">
             {data.storehours.map((hour, idx) => (
               <div
                 key={idx}
@@ -158,7 +148,7 @@ async function locationPrelude() {
           </div>
 
           <div>
-            <SocialIcons />
+            {/* <SocialIcons /> */}
           </div>
         </div>
       </div>
