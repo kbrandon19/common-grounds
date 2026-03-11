@@ -21,6 +21,14 @@ html{
   @apply antialiased;
 }
 
+@theme {
+  --color-white: #FAF9F9;
+  --color-green: #0F4C4D;
+  --color-red: #9C002B;
+  --color-darkRed: #6d001e;
+  --color-black: #0A0A0A;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

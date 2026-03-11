@@ -23,7 +23,7 @@ async function About() {
   const data: AboutSection = await getData();
 
   return (
-    <div className="w-full h-auto bg-[#9C002B]">
+    <div className="w-full h-auto bg-red">
       <div className="">
         {/* Background Image Section */}
         <div

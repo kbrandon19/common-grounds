@@ -94,7 +94,7 @@ export default function Nav() {
               <li key={idx} className="text-white">
                 <Link
                   href={`#${link.linkname}`}
-                  className="text-md uppercase tracking-wide hover:text-[#6d001e] transition-colors"
+                  className="text-md uppercase tracking-wide hover:text-darkRed transition-colors"
                 >
                   {link.linkname}
                 </Link>
@@ -104,7 +104,7 @@ export default function Nav() {
         </div>
 
         {/* Social Media  */}
-        <div className=" hidden md:flex flex-row gap-x-4">
+        <div className=" hidden md:flex flex-row gap-x-0">
 
           {data.socialMediaLinks.map((link, idx) => (
             <div
@@ -176,7 +176,7 @@ export default function Nav() {
                   },
                 },
               }}
-              className="space-y-8 text-4xl font-semibold text-[#9C002B] uppercase relative z-10"
+              className="space-y-8 text-4xl font-semibold text-red uppercase relative z-10"
             >
               {data.navigationlinks.map((link, idx) => (
                 <motion.li

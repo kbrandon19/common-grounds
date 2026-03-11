@@ -20,7 +20,7 @@ function contact() {
       <div className="w-full h-full flex justify-center md:justify-end items-center m-6 md:m-0">
         <button
           onClick={scrollToTop}
-          className="px-4 py-2 bg-[#0f4c4d] text-white rounded hover:bg-[#196360] transition-colors duration-200 cursor-pointer"
+          className="px-4 py-2 bg-green text-white rounded hover:bg-green transition-colors duration-200 cursor-pointer"
           aria-label="Back to top"
         >
           <CircleArrowUp className="w-4 h-4 mr-2 inline" />

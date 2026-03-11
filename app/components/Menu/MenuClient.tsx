@@ -91,7 +91,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
                   <button
                     className={`flex flex-col items-center p-2 w-full transition-all cursor-pointer ${
                       activeCategory === category.foodCategory
-                        ? "text-white font-bold bg-[#9C002B] rounded-md"
+                        ? "text-white font-bold bg-red rounded-md"
                         : " text-gray-500 grayscale"
                     }`}
                   >
@@ -127,7 +127,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
                 onClick={() => setActiveCategory(category.foodCategory)}
                 className={`flex flex-col items-center p-4 w-full transition-all cursor-pointer ${
                   activeCategory === category.foodCategory
-                    ? "text-white font-bold greyscale-0 bg-[#9C002B] rounded-md"
+                    ? "text-white font-bold greyscale-0 bg-red rounded-md"
                     : "text-gray-500 grayscale"
                 }`}
               >

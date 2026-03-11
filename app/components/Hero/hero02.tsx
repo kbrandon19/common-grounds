@@ -19,7 +19,7 @@ async function Hero02() {
   const data: Hero = await getData();
   return (
     <div
-      className="relative w-full h-screen bg-[#9C002B] text-white"
+      className="relative w-full h-screen bg-red text-white"
       style={{ height: "calc(100vh)" }}
       id="/"
     >
