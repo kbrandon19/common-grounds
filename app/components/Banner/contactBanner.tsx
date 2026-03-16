@@ -22,6 +22,8 @@ export default async function ContactBanner() {
           <h2 className="text-3xl md:text-5xl font-bold p-2 md:p-0 md:leading-14">
             {data.sectiontext}
           </h2>
+          <p className="text-white text-xl mt-4">Estamos aquí para servirle desde temprano por la mañana hasta la tarde!</p>
+
         </div>
       </div>
     </div>

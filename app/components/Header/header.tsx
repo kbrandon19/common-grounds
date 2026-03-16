@@ -10,6 +10,7 @@ import { Navigation } from "@/lib/interface";
 import { urlForImage } from "@/sanity/lib/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 async function getData() {
   const query = `
@@ -89,24 +90,31 @@ export default function Nav() {
 
         {/* Desktop Nav */}
         <div className="hidden md:block">
-          <ul className="flex space-x-6">
-            {data.navigationlinks.map((link, idx) => (
-              <li key={idx} className="text-white">
-                <Link
-                  href={`#${link.linkname}`}
-                  className="text-md uppercase tracking-wide hover:text-darkRed transition-colors"
-                >
-                  {link.linkname}
-                </Link>
-              </li>
-            ))}
-          </ul>
+<ul className="flex space-x-6">
+  {data.navigationlinks.map((link, idx) => (
+    <li key={idx} className="text-white">
+      <Link
+        href={`#${link.linkname}`}
+        className="relative text-md uppercase tracking-wide 
+        hover:text-darkRed transition-colors
+        after:absolute after:left-0 after:-bottom-1 
+        after:h-[2px] after:w-0 after:bg-white
+        after:transition-all after:duration-300
+        hover:after:w-full"
+      >
+        {link.linkname}
+      </Link>
+    </li>
+  ))}
+</ul>
         </div>
 
         {/* Social Media  */}
         <div className=" hidden md:flex flex-row gap-x-0">
+                  <Link href="#Contactenos"><Button className="w-auto h-10 bg-white p-4 text-red rounded-md uppercase hover:bg-darkRed hover:text-white">Contact</Button></Link>
 
-          {data.socialMediaLinks.map((link, idx) => (
+
+          {/* {data.socialMediaLinks.map((link, idx) => (
             <div
               key={idx}
               className="w-12 h-12  flex items-center justify-center"
@@ -124,7 +132,7 @@ export default function Nav() {
                 />
               </Link>
             </div>
-          ))}
+          ))} */}
         </div>
 
         {/* Mobile Nav Toggle */}

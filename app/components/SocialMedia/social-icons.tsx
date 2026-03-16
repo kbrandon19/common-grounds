@@ -23,9 +23,10 @@ export default async function SocialIcons() {
   const data = await getData();
 
   return (
-    <div className="hidden md:flex w-full h-auto flex-col gap-x-4 justify-center items-center mt-10">
-      <h2 className="text-xl font-bold text-gray-800">Síguenos!</h2>
+    <div className="hidden md:flex w-full h-auto flex-col gap-x-4 justify-center items-center mt-0">
+      {/* <h2 className="text-xl font-bold text-gray-800">Síguenos!</h2> */}
       <div className="flex flex-row">
+
         {data.socialMediaLinks.map((link, idx) => (
           <div key={idx} className="w-12 h-12 flex flex-row items-center justify-center">
             <Link href={link.socialLink} target="_blank">

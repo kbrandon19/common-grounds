@@ -4,6 +4,7 @@ import React from "react";
 import { client } from "@/sanity/lib/client";
 import { Hero } from "@/lib/interface";
 import Rating from "./../../GoogleReview/placeRating";
+import Image from "next/image";
 
 async function getData() {
   const query = `
@@ -35,7 +36,7 @@ async function Hero02() {
       <div className="w-auto h-[calc(100vh+200px)] relative z-5 flex flex-col gap-y-2 justify-center items-center content-center">
         {/* Hero Text */}
         <div className="w-5/6 md:p-0 flex flex-col items-center text-center gap-y-0 md:gap-y-4 mt-50">
-          <h1 className="md:p-2 text-6xl md:text-8xl lg:text-8xl lg:leading-26 font-semibold">
+          <h1 className="md:p-2 text-6xl md:text-8xl lg:text-8xl lg:leading-26 font-semibold drop-shadow-xl/25">
             {data.sectiontext}
           </h1>
           <div className="w-full h-auto">
@@ -44,7 +45,18 @@ async function Hero02() {
         </div>
 
         {/* Food photo + wave mask */}
-        <div className="w-full h-150 relative overflow-hidden mt-40 md:mt-0">
+        <div className="w-full h-150 relative md:overflow-hidden mt-40 md:mt-0">
+          <div className="absolute right-20 -top-10 md:top-20 md:right-60 text-9xl z-20">
+            <a href={"#Menú"}>
+              <Image
+                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772987751/Common%20Grounds/Background/ver-menu-graphic_nhtx9n.webp`}
+                alt="Coffee and Waffle"
+                width={200}
+                height={200}
+                className="rotate-5 opacity-0 animate-fadeIn w-[150px] md:w-[200px] h-auto"
+              />
+            </a>
+          </div>
           {/* Food background image — full area */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"

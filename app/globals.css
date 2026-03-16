@@ -151,3 +151,23 @@ html{
     @apply bg-background text-foreground;
   }
 }
+
+/* Hero Text Animation */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) rotate(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) rotate(10deg);
+    
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+    animation-delay: 2.5s;
+
+}

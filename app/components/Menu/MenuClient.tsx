@@ -128,7 +128,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
                 className={`flex flex-col items-center p-4 w-full transition-all cursor-pointer ${
                   activeCategory === category.foodCategory
                     ? "text-white font-bold greyscale-0 bg-red rounded-md"
-                    : "text-gray-500 grayscale"
+                    : "text-gray-500 grayscale md:hover:bg-gray-200 rounded-md"
                 }`}
               >
                 <div className="w-10 h-10 flex justify-center items-center ">
@@ -153,7 +153,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
         </div>
 
         {/* Food Items */}
-        <div className="w-3/4 mx-auto mt-16 h-auto overflow-hidden space-y-4">
+        <div className="w-3/4 mx-auto mt-16 h-auto md:h-[600px]  overflow-hidden md: overflow-y-scroll space-y-4">
           {initialData.menusection
             .filter((category) => category.foodCategory === activeCategory)
             .map((category) => (
