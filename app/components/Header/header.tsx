@@ -89,7 +89,7 @@ export default function Nav() {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:block">
+        <div className="hidden md:block" id="desktop-menu">
 <ul className="flex space-x-6">
   {data.navigationlinks.map((link, idx) => (
     <li key={idx} className="text-white">
@@ -136,18 +136,19 @@ export default function Nav() {
         </div>
 
         {/* Mobile Nav Toggle */}
-        <div className="md:hidden z-50">
+        <div className="md:hidden z-50" id="mobile-menu">
           <button
-            onClick={() => {
-              console.log('Toggling menu, current isOpen:', isOpen);
-              setIsOpen(!isOpen);
-            }}
-            className={`p-2 cursor-pointer transition-colors ${
-              isOpen ? 'text-black' : (navBgColor ? 'text-black' : 'text-black')
-            }`}
-          >
-            {isOpen ? <X size={35}/> : <Menu size={35} className="text-black"/>}
-          </button>
+  onClick={() => setIsOpen(!isOpen)}
+  aria-label={isOpen ? 'Close menu' : 'Open menu'}
+  aria-expanded={isOpen}
+  aria-controls="mobile-menu"
+  className="p-2 cursor-pointer transition-colors text-black"
+>
+  {isOpen
+    ? <X size={35} aria-hidden="true" />
+    : <Menu size={35} aria-hidden="true" />
+  }
+</button>
         </div>
       </div>
 

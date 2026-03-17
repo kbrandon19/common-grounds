@@ -1,6 +1,6 @@
 // import Image from "next/image";
 import Hero from './components/Hero/hero02'
-import LocationPrelude from './components/locationPrelude'
+import LocationPrelude from './components/Contact'
 import Menu from './components/Menu/page'
 import MenuPrelude from './components/Banner/menuPrelude'
 import Footer from './components/footer'

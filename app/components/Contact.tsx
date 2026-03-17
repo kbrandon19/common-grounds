@@ -56,7 +56,7 @@ async function locationPrelude() {
             <div className="w-full md:w-3/4 h-96 md:h-auto aspect-video md:aspect-auto">
               <Image
                 src={`https://maps.googleapis.com/maps/api/staticmap?center=-2.2052105,-80.9597101&zoom=16&scale=2&size=600x200&markers=color:red%7C-2.2052105,-80.9597101&key=${process.env.GOOGLE_MAPS_API}`}
-                alt="Common Grounds Coffee and Waffle House location"
+                alt="Common Grounds Map Location"
                 width={500}
                 height={300}
                 className="w-full h-full object-cover"
