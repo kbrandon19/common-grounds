@@ -24,7 +24,6 @@ export default function RootLayout({
     name: "Common Grounds Coffee House",
     image: "https://common-grounds.vercel.app/images/og-image.jpg",
     url: "https://common-grounds.vercel.app",
-    telephone: "+593964213147",
     priceRange: "$$",
   
     geo: {
@@ -51,7 +50,7 @@ export default function RootLayout({
         closes: "14:00",
       },
     ],
-    servesCuisine: ["Coffee", "Bolon","Smoothie", "Sandwiches"],
+    servesCuisine: ["Coffee", "Bolon","Smoothie", "Sandwiches","Ecuadorian Breakfast","American Breakfast","Breakfast"],
     menu: "https://common-grounds.vercel.app/menu",
     sameAs: [
       "https://www.instagram.com/CommonGroundsCoffeeHouse",
@@ -62,7 +61,7 @@ export default function RootLayout({
     <html lang="es-EC">
       <head>
         <title>Common Grounds Coffee House </title>
-        <meta name="description" content="Common Grounds Coffee House is a cozy breakfast/brunch café offering a mix of Ecuadorian and American-style dishes." />
+        <meta name="description" content="Common Grounds Coffee House is a cozy breakfast and brunch café offering a mix of Ecuadorian and American-style dishes." />
         <meta name="keywords" content="coffee house, specialty coffee, Common Grounds Coffee House, espresso, latte, pastries, community cafe, coffee shop, ecuador, playa, cafe, desayuno" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

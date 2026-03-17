@@ -29,7 +29,7 @@ async function menuPrelude() {
       {/* Section body */}
       <div className="text-center mx-auto h-auto" >
         <div className="max-w-lg px-6 lg:px-0  mx-auto">
-                    <h3 className="text-xs uppercase pb-2">- {data.sectiontagline} -</h3>
+                    <p className="text-xs uppercase pb-2">- {data.sectiontagline} -</p>
 
           <h2 className="text-5xl font-bold">{data.sectiontitle}</h2>
           <p className="text-gray-700 text-xl mt-4">{data.sectiontext}</p>

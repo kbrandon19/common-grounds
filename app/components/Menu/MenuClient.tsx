@@ -8,11 +8,13 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { urlForImage } from "@/sanity/lib/image";
 import { Menu } from "@/lib/interface";
 
-
-
-export default function MenuClient({ initialData }: { initialData: Menu | null }) {
+export default function MenuClient({
+  initialData,
+}: {
+  initialData: Menu | null;
+}) {
   const [activeCategory, setActiveCategory] = useState<string | null>(
-    initialData?.menusection?.[0]?.foodCategory || null
+    initialData?.menusection?.[0]?.foodCategory || null,
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -37,7 +39,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
     (index: number) => {
       if (emblaApi) emblaApi.scrollTo(index);
     },
-    [emblaApi]
+    [emblaApi],
   );
 
   if (!initialData) {
@@ -72,8 +74,7 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
   }
 
   return (
-    <div className="h-full w-full" >
-      
+    <div className="h-full w-full">
       <div className="w-full h-auto mt-20">
         {/* Mobile Layout */}
         <div className="block lg:hidden relative px-4">
@@ -161,37 +162,38 @@ export default function MenuClient({ initialData }: { initialData: Menu | null }
                 key={category.foodCategory}
                 className="grid md:grid-cols-2 gap-4"
               >
-{category.plate?.map((dish) => (
-  <div
-    key={dish.dishName}
-    className="flex items-center flex-col md:flex-row gap-4"
-  >
-    {dish.dishPhoto ? (
-      <div className="w-full h-52 relative rounded-md overflow-hidden">
-        <Image
-          src={urlForImage(dish.dishPhoto)}
-          alt={dish.dishName}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          placeholder="empty"
-          className="object-cover md:object-cover"
-        />
-      </div>
-    ) : null}
+                {category.plate?.map((dish) => (
+                  <div
+                    key={dish.dishName}
+                    className="flex items-center flex-col md:flex-row gap-4"
+                  >
+                    {dish.dishPhoto ? (
+                      <div className="w-full h-52 relative rounded-md overflow-hidden">
+                        <Image
+                          src={urlForImage(dish.dishPhoto)}
+                          alt={dish.dishName}
+                          fill
+                          sizes="(max-width: 768px) 240px, 241px"
+                          placeholder="empty"
+                          className="object-cover md:object-cover"
+                        />
+                      </div>
+                    ) : null}
 
-    <div className="w-full mx-auto text-left">
-      <div className="flex flex-row gap-2 items-center">
-        <h4 className="text-lg font-bold">{dish.dishName}</h4> |
-      <p className="text-md font-semibold mt-1">{dish.price}</p></div>
-      
-      <p className="w-full text-md text-gray-600">
-        {dish.dishDescription}
-      </p>
-      
-    </div>
-    
-  </div>
-))}
+                    <div className="w-full mx-auto text-left">
+                      <div className="flex flex-row gap-2 items-center">
+                        <h4 className="text-lg font-bold">{dish.dishName}</h4> |
+                        <p className="text-md font-semibold mt-1">
+                          {dish.price}
+                        </p>
+                      </div>
+
+                      <p className="w-full text-md text-gray-600">
+                        {dish.dishDescription}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             ))}
         </div>

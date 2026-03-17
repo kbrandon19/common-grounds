@@ -58,12 +58,16 @@ async function Hero02() {
             </a>
           </div>
           {/* Food background image — full area */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772987751/Common%20Grounds/Background/rachel-park-hrlvr2ZlUNk-unsplash_ch5keh.jpg)`,
-            }}
-          />
+          <div className="absolute inset-0">
+  <Image
+    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772987751/Common%20Grounds/Background/hero-02-background-image.webp`}
+    alt=""
+    fill
+    priority
+    fetchPriority="high"
+    className="object-cover object-center"
+  />
+</div>
 
           {/* TOP wave — coffee bean pattern */}
           <svg
