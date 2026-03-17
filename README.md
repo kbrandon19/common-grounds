@@ -1,24 +1,53 @@
-# Common Grounds Coffee & Waffle House Website
 
-Welcome to the official website repo for **Common Grounds Coffee & Waffle House**, a modern, responsive, and CMS-powered web experience build using **Next.js**, **React**, **Tailwind CSS**, and **Sanity.io**.
+# Common Grounds Coffee House Website
+
+A modern, responsive website for Common Grounds Coffee House—a cozy breakfast and brunch café offering a mix of Ecuadorian and American-style dishes.
+
+![Common Grounds](https://res.cloudinary.com/dujkjy2e2/image/upload/v1773772367/Common%20Grounds/Screenshot_2026-03-17_143223_prnoia.png)
+
+
+## 🌐 Live Demo
+
+Coming Soon
+<!-- [View Website](#)  
+ Replace with your deployed link -->
 
 ---
- ## Tech Stack
 
- - **[Next.js](https://nextjs.org/)** - React framework for production
- - **[React](https://reactjs.org/)** - Frontend Javascript library
- - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
- - **[Sanity.io](https://sanity.io)** - Headless CMS for managing content
- - **[Shadcn UI](https://ui.shadcn.com/)** - Beautifully designed UI components
- - **[TypeScript](https://typescriptlang.org)** - Static typing for safer development
+## 📌 Overview
+
+This project was designed and developed to give Common Grounds a strong digital presence that matches its updated menu design. The goal was to create a visually engaging experience while making it easy for customers to explore the menu, view reviews, and find key information.
 
 ---
 
-## Features
+## 🧠 Design Approach
 
-- Fully responsive design
-- Easy content management with Sanity Studio
-- Embedded Google Maps for location
-- Dynamic image and menu content
-- SEO optimized and performance-focused
-- Clean and modern UI
+The design focuses on creating an engaging first impression through bold typography and strong visual hierarchy. To build trust with users, Google review ratings are integrated directly into the interface. Food imagery and vibrant colors were used to reflect the restaurant’s personality and enhance the overall user experience.
+
+### ✨ Features
+
+- 📱 Fully responsive design (mobile-first)
+- 🎨 Modern UI with vibrant branding
+- 📝 Dynamic content management with Sanity CMS
+- ⭐ Google Reviews integration
+- 📍 Location and business info via Google Places API
+- ⚡ Optimized images and performance via Cloudinary
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js, TypeScript, Tailwind CSS  
+- **CMS:** Sanity  
+- **APIs:** Google Places API  
+- **Media Hosting:** Cloudinary  
+- **Deployment:** Vercel  
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/kbrandon19/common-grounds.git
+cd common-grounds
