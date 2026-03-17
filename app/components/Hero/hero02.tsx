@@ -26,7 +26,7 @@ async function Hero02() {
     >
       {/* Coffee Bean Background — full top section */}
       <div
-        className="w-full h-[calc(100vh+30px)] md:h-[calc(100vh+110px)] absolute inset-x-0 top-0 z-0 bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-center"
+        className="w-full h-[calc(100vh+30px)] md:h-[calc(100vh+110px)] absolute inset-x-0 top-0 z-0 bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-center "
         style={{
           backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp)`,
         }}
@@ -36,7 +36,7 @@ async function Hero02() {
       <div className="w-auto h-[calc(100vh+200px)] relative z-5 flex flex-col gap-y-2 justify-center items-center content-center">
         {/* Hero Text */}
         <div className="w-5/6 md:p-0 flex flex-col items-center text-center gap-y-0 md:gap-y-4 mt-50">
-          <h1 className="md:p-2 text-6xl md:text-8xl lg:text-8xl lg:leading-26 font-semibold drop-shadow-xl/25">
+          <h1 className="md:p-2 text-6xl md:text-8xl lg:text-8xl lg:leading-26 font-semibold drop-shadow-xl/25 animate-heroFadeIn">
             {data.sectiontext}
           </h1>
           <div className="w-full h-auto">
@@ -58,7 +58,7 @@ async function Hero02() {
             </a>
           </div>
           {/* Food background image — full area */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 animate-waveFadeIn">
   <Image
     src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772987751/Common%20Grounds/Background/hero-02-background-image.webp`}
     alt=""

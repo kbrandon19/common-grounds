@@ -73,17 +73,18 @@ export default function Nav() {
 
   return (
     <div className={`text-black w-full h-auto px-4 py-4 fixed z-10 transition-colors duration-300 ${
-      navBgColor ? 'md:bg-[#9C002B] bg-transparent' : 'bg-transparent'
+      navBgColor ? 'md:bg-red bg-transparent' : 'bg-transparent'
     }`}>
       <div className="w-auto h-auto px-4 2xl:px-16 flex flex-row justify-between items-center">
         {/* Logo */}
-        <div className="flextems-center">
+        <div className="flex items-center">
           <Link href="/">
             <Image
               height={50}
               width={50}
               src={urlForImage(data.logo)}
               alt="Common Grounds Logo"
+              className="w-12.5 h-auto"
             />
           </Link>
         </div>
@@ -98,7 +99,7 @@ export default function Nav() {
         className="relative text-md uppercase tracking-wide 
         hover:text-darkRed transition-colors
         after:absolute after:left-0 after:-bottom-1 
-        after:h-[2px] after:w-0 after:bg-white
+        after:h-0.5 after:w-0 after:bg-white
         after:transition-all after:duration-300
         hover:after:w-full"
       >
@@ -163,7 +164,7 @@ export default function Nav() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 bg-white z-40 flex flex-col text-left items-center justify-center"
           >
-            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-repeat bg-left-top opacity-30 bg-[length:500px_auto] " style={{
+            <div className="w-full h-screen absolute inset-x-0 top-0 z-0 bg-repeat bg-top-left opacity-30 bg-size-[500px_auto] " style={{
     backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772429912/Common%20Grounds/Background/Red_Coffee_Bean.webp)`
   }} />
 

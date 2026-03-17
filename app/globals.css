@@ -171,3 +171,40 @@ html{
     animation-delay: 2.5s;
 
 }
+
+/* Hero text fade in*/
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.animate-heroFadeIn {
+  animation: heroFadeIn 1s ease forwards;
+    animation-duration: 2;
+
+}
+
+
+@keyframes waveFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.animate-waveFadeIn {
+  animation: waveFadeIn 1s ease forwards;
+    animation-duration: 1.5;
+
+}
+
