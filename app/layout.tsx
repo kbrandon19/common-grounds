@@ -1,6 +1,5 @@
 import HeaderWrapper from "./components/Header/HeaderWrapper";
 import { Poppins } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -84,7 +83,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <HeaderWrapper />
         <main>{children}</main>
-        <Analytics />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
