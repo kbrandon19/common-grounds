@@ -1,3 +1,4 @@
+
 // lighthouserc.js
 module.exports = {
   ci: {
@@ -7,6 +8,8 @@ module.exports = {
     },
 
     assert: {
+      preset: 'lighthouse:recommended',
+      assertions: {
       // Category thresholds
       "categories:performance": ["warn", { minScore: 0.5 }],
       "categories:accessibility": ["warn", { minScore: 0.7 }],
@@ -31,7 +34,8 @@ module.exports = {
 
       // Best Practices
       "errors-in-console": "warn",
-    },
+    }
+  },
 
     upload: {
       target: 'temporary-public-storage',
