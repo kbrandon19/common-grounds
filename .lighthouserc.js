@@ -20,15 +20,14 @@ module.exports = {
       "metrics:speed-index": ["warn", { maxNumericValue: 3000 }],
 
       // Accessibility metrics
-      "accessibility:color-contrast": "warn",
-      "accessibility:image-alt": "warn",
-      "accessibility:label": "warn",
-      "accessibility:aria-allowed-attr": "warn",
+      "color-contrast": "warn",
+      "image-alt": "warn",
+      "aria-allowed-attr": "warn",
 
       // SEO metrics
-      "seo:meta-description": "warn",
-      "seo:document-title": "warn",
-      "seo:link-text": "warn",
+      "meta-description": "warn",
+      "document-title": "warn",
+      "link-text": "warn",
 
       // Best Practices
       "best-practices:errors-in-console": "warn",
