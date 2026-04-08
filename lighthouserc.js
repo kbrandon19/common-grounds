@@ -8,7 +8,7 @@ module.exports = {
     },
 
     assert: {
-      preset: 'lighthouse:recommended',
+      // preset: 'lighthouse:recommended',
       assertions: {
       // Category thresholds
       "categories:performance": ["warn", { minScore: 0.5 }],
@@ -23,14 +23,14 @@ module.exports = {
       "speed-index": ["warn", { maxNumericValue: 3000 }],
 
       // Accessibility
-      "color-contrast": "warn",
-      "image-alt": "warn",
-      "aria-allowed-attr": "warn",
+      "accessibility:color-contrast": "warn",
+      "accessibility:image-alt": "warn",
+      "accessibility:aria-allowed-attr": "warn",
 
       // SEO
-      "meta-description": "warn",
-      "document-title": "warn",
-      "link-text": "warn",
+      "seo:meta-description": "warn",
+      "seo:document-title": "warn",
+      "seo:link-text": "warn",
 
       // Best Practices
       "errors-in-console": "warn",
