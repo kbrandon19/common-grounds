@@ -9,8 +9,8 @@ A modern, responsive website for Common Grounds Coffee House—a cozy breakfast 
 ## 🌐 Live Demo
 
 Coming Soon
-<!-- [View Website](#)  
- Replace with your deployed link -->
+[View Website](https://www.commongroundssalinas.com)  
+ 
 
 ---
 
