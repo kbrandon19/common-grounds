@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-      SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+      NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
 
     steps:
     - uses: actions/checkout@v3
