@@ -112,7 +112,7 @@ export default function Nav() {
 
         {/* Social Media  */}
         <div className=" hidden md:flex flex-row gap-x-0">
-                  <Link href="#Contactenos"><Button className="w-auto h-10 bg-white p-4 text-red rounded-md uppercase hover:bg-darkRed hover:text-white">Contact</Button></Link>
+                  <Link href="https://wa.me/593964213147" target="_blank"><Button className="w-auto h-10 bg-white p-4 text-red rounded-md uppercase hover:bg-darkRed hover:text-white cursor-pointer">Contact</Button></Link>
 
 
           {/* {data.socialMediaLinks.map((link, idx) => (

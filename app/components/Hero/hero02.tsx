@@ -24,13 +24,31 @@ async function Hero02() {
       style={{ height: "calc(100vh)" }}
       id="/"
     >
-      {/* Coffee Bean Background — full top section */}
-      <div
-        className="w-full h-[calc(100vh+30px)] md:h-[calc(100vh+110px)] absolute inset-x-0 top-0 z-0 bg-repeat bg-[length:500px_auto] lg:bg-[length:1000px_auto] bg-center "
-        style={{
-          backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp)`,
-        }}
-      />
+      {/* Coffee Bean Background — full top section */} 
+<>
+  {/* Preload for performance */}
+  <link
+    rel="preload"
+    as="image"
+    href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp`}
+  />
+
+  <div
+    className="
+      w-full 
+      h-[calc(100vh+30px)] 
+      md:h-[calc(100vh+110px)] 
+      absolute inset-x-0 top-0 z-0 
+      bg-repeat 
+      bg-[length:500px_auto] 
+      lg:bg-[length:1000px_auto] 
+      bg-center
+    "
+    style={{
+      backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp)`,
+    }}
+  />
+</>
 
       {/* Container for Hero Text and Image */}
       <div className="w-auto h-[calc(100vh+200px)] relative z-5 flex flex-col gap-y-2 justify-center items-center content-center">
@@ -91,6 +109,7 @@ async function Hero02() {
                   width="500"
                   height="500"
                   preserveAspectRatio="xMidYMid slice"
+                  
                 />
               </pattern>
             </defs>
