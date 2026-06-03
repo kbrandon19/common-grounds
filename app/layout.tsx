@@ -1,6 +1,7 @@
 import HeaderWrapper from "./components/Header/HeaderWrapper";
 import { Poppins } from "next/font/google";
 import type { Metadata } from "next";
+import Head from "next/head";
 import "./globals.css";
 const poppins = Poppins({
   subsets: ["latin"],
@@ -79,6 +80,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+            <Head>
+        <link
+          rel="preload"
+          as="image"
+          href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp`}
+        />
+      </Head>
       <body className={poppins.className}>
         <HeaderWrapper />
         <main>{children}</main>
