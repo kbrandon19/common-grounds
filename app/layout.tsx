@@ -1,4 +1,4 @@
-import HeaderWrapper from "./components/Header/HeaderWrapper";
+// import HeaderWrapper from "./components/Header/HeaderWrapper";
 import { Poppins } from "next/font/google";
 import type { Metadata } from "next";
 import Head from "next/head";
@@ -88,7 +88,7 @@ export default function RootLayout({
         />
       </Head>
       <body className={poppins.className}>
-        <HeaderWrapper />
+        {/* <HeaderWrapper /> */}
         <main>{children}</main>
         
         <script

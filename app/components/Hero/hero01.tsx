@@ -6,6 +6,7 @@ import { client } from "../../../sanity/lib/client";
 import { Hero } from "@/lib/interface";
 import { urlForImage } from "../../../sanity/lib/image";
 import Rating from "../../GoogleReview/placeRating";
+import Nav from "../../Header/header";
 
 async function getData() {
   const query = `
@@ -24,6 +25,7 @@ async function Hero01() {
   
       <div className="relative w-full h-screen bg-red text-white " style={{ height: "calc(100vh)" }} id="/">
         {/* Background Image Vector */}
+       
        
   {/* Preload for performance */}
   

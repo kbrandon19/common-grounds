@@ -5,6 +5,7 @@ import { client } from "@/sanity/lib/client";
 import { Hero } from "@/lib/interface";
 import Rating from "./../../GoogleReview/placeRating";
 import Image from "next/image";
+import Nav from "../Header/header";
 
 async function getData() {
   const query = `
@@ -19,22 +20,25 @@ async function getData() {
 async function Hero02() {
   const data: Hero = await getData();
   return (
+    
     <div
       className="relative w-full h-screen bg-red text-white"
       style={{ height: "calc(100vh)" }}
       id="/"
-    >
-      {/* Coffee Bean Background — full top section */} 
-<>
-  {/* Preload for performance */}
-  <link
-    rel="preload"
-    as="image"
-    href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp`}
-  />
+    > <div className="relative z-50"><Nav/></div>
+      
+      {/* Coffee Bean Background — full top section */}
+      <>
+      
+        {/* Preload for performance */}
+        <link
+          rel="preload"
+          as="image"
+          href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp`}
+        />
 
-  <div
-    className="
+        <div
+          className="
       w-full 
       h-[calc(100vh+30px)] 
       md:h-[calc(100vh+110px)] 
@@ -44,11 +48,11 @@ async function Hero02() {
       lg:bg-[length:1000px_auto] 
       bg-center
     "
-    style={{
-      backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp)`,
-    }}
-  />
-</>
+          style={{
+            backgroundImage: `url(https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772135489/Common%20Grounds/Background/Red_Coffee_Bean.webp)`,
+          }}
+        />
+      </>
 
       {/* Container for Hero Text and Image */}
       <div className="w-auto h-[calc(100vh+200px)] relative z-5 flex flex-col gap-y-2 justify-center items-center content-center">
@@ -77,15 +81,15 @@ async function Hero02() {
           </div>
           {/* Food background image — full area */}
           <div className="absolute inset-0 animate-waveFadeIn">
-  <Image
-    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772987751/Common%20Grounds/Background/hero-02-background-image.webp`}
-    alt=""
-    fill
-    priority
-    fetchPriority="high"
-    className="object-cover object-center"
-  />
-</div>
+            <Image
+              src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload/v1772987751/Common%20Grounds/Background/hero-02-background-image.webp`}
+              alt=""
+              fill
+              priority
+              fetchPriority="high"
+              className="object-cover object-center"
+            />
+          </div>
 
           {/* TOP wave — coffee bean pattern */}
           <svg
@@ -109,7 +113,6 @@ async function Hero02() {
                   width="500"
                   height="500"
                   preserveAspectRatio="xMidYMid slice"
-                  
                 />
               </pattern>
             </defs>

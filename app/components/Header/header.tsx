@@ -32,50 +32,51 @@ async function getData() {
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState<Navigation | null>(null);
-  const [navBgColor, setNavBgColor] = useState(false);
+  // const [navBgColor, setNavBgColor] = useState(false);
 
   useEffect(() => {
     getData().then(setData);
   }, []);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isOpen]);
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'auto';
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = 'auto';
+  //   };
+  // }, [isOpen]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const h1Element = document.querySelector('h1');
-      if (!h1Element) return;
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const h1Element = document.querySelector('h1');
+  //     if (!h1Element) return;
 
-      const h1Rect = h1Element.getBoundingClientRect();
-      const navHeight = 100; // Approximate nav height
+  //     const h1Rect = h1Element.getBoundingClientRect();
+  //     const navHeight = 100; // Approximate nav height
 
-      // If h1 top is above or near the nav area, set background color
-      if (h1Rect.top < navHeight) {
-        setNavBgColor(true);
-      } else {
-        setNavBgColor(false);
-      }
-    };
+  //     // If h1 top is above or near the nav area, set background color
+  //     if (h1Rect.top < navHeight) {
+  //       setNavBgColor(true);
+  //     } else {
+  //       setNavBgColor(false);
+  //     }
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   if (!data) return null;
 
   return (
-    <div className={`text-black w-full h-auto px-4 py-4 fixed z-10 transition-colors duration-300 ${
-      navBgColor ? 'md:bg-red bg-transparent' : 'bg-transparent'
-    }`}>
-      <div className="w-auto h-auto px-4 2xl:px-16 flex flex-row justify-between items-center">
+    // <div className={`text-black w-full h-auto px-4 py-4 fixed z-10 transition-colors duration-300 ${
+    //   navBgColor ? 'md:bg-red bg-transparent' : 'bg-transparent'
+    // }`}>
+      <>
+      <div className="relativew-auto h-auto px-4 py-4 2xl:px-16 flex flex-row justify-between items-center bg-transparent">
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
@@ -115,25 +116,7 @@ export default function Nav() {
                   <Link href="https://wa.me/593964213147" target="_blank"><Button className="w-auto h-10 bg-white p-4 text-red rounded-md uppercase hover:bg-darkRed hover:text-white cursor-pointer">Contact</Button></Link>
 
 
-          {/* {data.socialMediaLinks.map((link, idx) => (
-            <div
-              key={idx}
-              className="w-12 h-12  flex items-center justify-center"
-            >
-              <Link
-                href={link.socialLink}
-                target="_blank"
-              >
-                <Image
-                  src={urlForImage(link.icon)}
-                  alt={link.socialName}
-                  width={24}
-                  height={24}
-                  
-                />
-              </Link>
-            </div>
-          ))} */}
+
         </div>
 
         {/* Mobile Nav Toggle */}
@@ -251,6 +234,6 @@ export default function Nav() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+   </>
   );
 }
