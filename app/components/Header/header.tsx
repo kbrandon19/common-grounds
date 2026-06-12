@@ -32,49 +32,18 @@ async function getData() {
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState<Navigation | null>(null);
-  // const [navBgColor, setNavBgColor] = useState(false);
+
 
   useEffect(() => {
     getData().then(setData);
   }, []);
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     document.body.style.overflow = 'hidden';
-  //   } else {
-  //     document.body.style.overflow = 'auto';
-  //   }
-  //   return () => {
-  //     document.body.style.overflow = 'auto';
-  //   };
-  // }, [isOpen]);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const h1Element = document.querySelector('h1');
-  //     if (!h1Element) return;
-
-  //     const h1Rect = h1Element.getBoundingClientRect();
-  //     const navHeight = 100; // Approximate nav height
-
-  //     // If h1 top is above or near the nav area, set background color
-  //     if (h1Rect.top < navHeight) {
-  //       setNavBgColor(true);
-  //     } else {
-  //       setNavBgColor(false);
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
 
   if (!data) return null;
 
   return (
-    // <div className={`text-black w-full h-auto px-4 py-4 fixed z-10 transition-colors duration-300 ${
-    //   navBgColor ? 'md:bg-red bg-transparent' : 'bg-transparent'
-    // }`}>
+
       <>
       <div className="relativew-auto h-auto px-4 py-4 2xl:px-16 flex flex-row justify-between items-center bg-transparent">
         {/* Logo */}

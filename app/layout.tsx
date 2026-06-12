@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import type { Metadata } from "next";
 import Head from "next/head";
 import "./globals.css";
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 const poppins = Poppins({
   subsets: ["latin"],
   style: ["normal", "italic"],
@@ -89,7 +91,9 @@ export default function RootLayout({
       </Head>
       <body className={poppins.className}>
         {/* <HeaderWrapper /> */}
-        <main>{children}</main>
+        <main>{children}
+          <GoogleAnalytics gaId="G-PD9DDLDL9J" />
+        </main>
         
         <script
           type="application/ld+json"
