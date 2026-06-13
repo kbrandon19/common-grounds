@@ -25,7 +25,9 @@ async function Hero02() {
       className="relative w-full h-screen bg-red text-white"
       style={{ height: "calc(100vh)" }}
       id="/"
-    > <div className="relative z-50"><Nav/></div>
+    > 
+    <div className="absolute top-0 left-0 w-full z-50"><Nav/></div>
+
       
       {/* Coffee Bean Background — full top section */}
       <>
@@ -139,7 +141,7 @@ async function Hero02() {
         </div>
       </div>
       {/* Creates artifial spacing for mobilee section to prevent wave from covering content */}
-      <div id="Menú" className="w-full h-48 -mt-40"></div>
+      <div id="Menú" className="w-full h-72 -mt-40"></div>
     </div>
   );
 }
